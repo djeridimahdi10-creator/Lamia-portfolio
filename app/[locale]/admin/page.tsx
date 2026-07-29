@@ -69,7 +69,7 @@ const metricIcons: Record<string, React.ElementType> = {
 export default function AdminPage() {
   const t = useTranslations("admin");
   const currentLocale = useLocale();
-  const { updateData, resetData } = usePortfolioData();
+  const { data: contextData, updateData, resetData } = usePortfolioData();
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [isCheckingAuth, setIsCheckingAuth] = useState(true);
   const [password, setPassword] = useState("");
@@ -86,6 +86,13 @@ export default function AdminPage() {
     message: string;
     onConfirm: () => void;
   }>({ isOpen: false, title: "", message: "", onConfirm: () => {} });
+
+  // Sync admin state with live contextData from Supabase
+  useEffect(() => {
+    if (contextData && Object.keys(contextData).length > 0) {
+      setData(contextData);
+    }
+  }, [contextData]);
 
   const addToast = (message: string, type: ToastType = "success") => {
     const id = Date.now().toString();
@@ -121,18 +128,7 @@ export default function AdminPage() {
       .finally(() => {
         setIsCheckingAuth(false);
       });
-
-    const savedData = localStorage.getItem("portfolio_data");
-    if (savedData) {
-      try {
-        setData(JSON.parse(savedData));
-      } catch {
-        loadDefaults();
-      }
-    } else {
-      loadDefaults();
-    }
-  }, [loadDefaults]);
+  }, []);
 
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();

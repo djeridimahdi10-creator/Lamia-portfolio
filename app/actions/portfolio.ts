@@ -1,14 +1,15 @@
 "use server";
 
-import { supabase } from "@/lib/supabaseClient";
+import { getSupabaseClient } from "@/lib/supabaseClient";
 
 export async function getPortfolioContentAction() {
-  if (!supabase) {
-    return { success: false, data: null, error: "Supabase client not initialized" };
+  const client = getSupabaseClient();
+  if (!client) {
+    return { success: false, data: null, error: "Supabase environment variables missing" };
   }
 
   try {
-    const { data, error } = await supabase
+    const { data, error } = await client
       .from("portfolio_content")
       .select("data")
       .eq("id", "main")
@@ -25,12 +26,13 @@ export async function getPortfolioContentAction() {
 }
 
 export async function savePortfolioContentAction(portfolioData: any) {
-  if (!supabase) {
-    return { success: false, error: "Supabase client not initialized" };
+  const client = getSupabaseClient();
+  if (!client) {
+    return { success: false, error: "Supabase environment variables missing" };
   }
 
   try {
-    const { error } = await supabase.from("portfolio_content").upsert({
+    const { error } = await client.from("portfolio_content").upsert({
       id: "main",
       data: portfolioData,
       updated_at: new Date().toISOString(),

@@ -64,9 +64,23 @@ export function Navbar({ locale }: NavbarProps) {
   }
 
   const switchLocale = () => {
-    const newLocale = locale === "fr" ? "en" : "fr";
-    const newPath = pathname.replace(`/${locale}`, `/${newLocale}`);
-    router.push(newPath);
+    const targetLocale = locale === "fr" ? "en" : "fr";
+    if (targetLocale === "en") {
+      if (pathname?.startsWith("/fr")) {
+        router.push(pathname.replace("/fr", "/en"));
+      } else if (!pathname || pathname === "/") {
+        router.push("/en");
+      } else if (!pathname.startsWith("/en")) {
+        router.push(`/en${pathname}`);
+      }
+    } else {
+      if (pathname?.startsWith("/en")) {
+        const newPath = pathname.replace("/en", "") || "/";
+        router.push(newPath);
+      } else {
+        router.push("/");
+      }
+    }
   };
 
   const navLinks = siteConfig.navItems;
