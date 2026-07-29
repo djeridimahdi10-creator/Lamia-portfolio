@@ -1,0 +1,168 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "skills": "Skills",
+    "projects": "Projects",
+    "experience": "Experience",
+    "testimonials": "Testimonials",
+    "blog": "Journal",
+    "contact": "Contact",
+    "resume": "Resume",
+    "admin": "Admin"
+  },
+  "theme": {
+    "light": "Light",
+    "dark": "Dark"
+  },
+  "language": {
+    "fr": "Français",
+    "en": "English"
+  },
+  "hero": {
+    "cta": "Discover my projects",
+    "scroll": "Scroll"
+  },
+  "about": {
+    "title": "About",
+    "philosophy": "Philosophy",
+    "education": "Education"
+  },
+  "skills": {
+    "title": "Skills"
+  },
+  "projects": {
+    "title": "Projects",
+    "all": "All",
+    "viewProject": "View project",
+    "location": "Location",
+    "year": "Year",
+    "software": "Software",
+    "concept": "Concept",
+    "backToProjects": "Back to projects",
+    "gallery": "Gallery"
+  },
+  "experience": {
+    "title": "Experience",
+    "present": "Present"
+  },
+  "testimonials": {
+    "title": "Testimonials"
+  },
+  "blog": {
+    "title": "Journal",
+    "readMore": "Read more",
+    "search": "Search...",
+    "minRead": "min read",
+    "close": "Close"
+  },
+  "contact": {
+    "title": "Contact",
+    "name": "Your name",
+    "email": "Your email",
+    "subject": "Subject",
+    "message": "Your message...",
+    "send": "Send",
+    "sending": "Sending...",
+    "success": "Message sent successfully!",
+    "error": "An error occurred."
+  },
+  "resume": {
+    "title": "Resume",
+    "download": "Download Resume",
+    "preview": "Preview"
+  },
+  "footer": {
+    "copyright": "All rights reserved.",
+    "backToTop": "Back to top"
+  },
+  "admin": {
+    "title": "Admin Panel",
+    "loginTitle": "Client & Admin Area",
+    "loginSubtitle": "Control panel to edit portfolio content",
+    "loginButton": "Access Editor",
+    "backToSite": "Back to site",
+    "passwordLabel": "Access password",
+    "passwordPlaceholder": "••••••••••••",
+    "wrongPassword": "Wrong password",
+    "viewSite": "View public site",
+    "studioAdmin": "Studio Admin",
+    "saved": "Changes saved!",
+    "saveAll": "Save All",
+    "exportJson": "Export JSON",
+    "importJson": "Import",
+    "resetDefaults": "Reset to defaults",
+    "logout": "Logout",
+    "sections": "Section Management",
+    "editorTitle": "Studio Editor",
+    "hero": "Hero",
+    "about": "About",
+    "projects": "Projects",
+    "skills": "Skills",
+    "experience": "Experience",
+    "testimonials": "Testimonials",
+    "blog": "Journal / Blog",
+    "contact": "Contact",
+    "resume": "CV / Resume",
+    "statsProjects": "Completed Projects",
+    "statsSkills": "Skills",
+    "statsBlog": "Articles",
+    "statsExperience": "Experience",
+    "statsTestimonials": "Testimonials",
+    "addProject": "Add Project",
+    "addExperience": "Add Experience",
+    "addTestimonial": "Add Testimonial",
+    "addBlogPost": "Add Article",
+    "addSocialLink": "Add Link",
+    "searchPlaceholder": "Search...",
+    "edit": "Edit",
+    "delete": "Delete",
+    "deleteConfirm": "Delete this item?",
+    "projectTitle": "Project Title",
+    "shortDescription": "Short Description",
+    "coverImage": "Cover Image",
+    "year": "Year",
+    "category": "Category",
+    "categoryResidential": "Residential",
+    "categoryCultural": "Cultural",
+    "categoryUrban": "Urban",
+    "categoryConceptual": "Conceptual",
+    "fullName": "Full Name",
+    "mainTitle": "Main Title",
+    "subtitle": "Subtitle",
+    "introText": "Introduction Text",
+    "ctaButton": "Action Button (CTA)",
+    "profilePhoto": "Profile / About Photo",
+    "philosophy": "Architectural Philosophy",
+    "jobTitle": "Job Title / Role",
+    "company": "Company / School",
+    "location": "Location",
+    "startDate": "Start Date",
+    "endDate": "End Date",
+    "description": "Description",
+    "type": "Type",
+    "typeWork": "Work",
+    "typeEducation": "Education",
+    "typeInternship": "Internship",
+    "authorPhoto": "Author Photo",
+    "quote": "Quote",
+    "articleTitle": "Article Title",
+    "bannerImage": "Article Banner Image",
+    "email": "Official Email",
+    "phone": "Phone Number",
+    "socialLinks": "Social Media & Portfolio Links",
+    "platform": "Platform",
+    "url": "URL",
+    "resumeUpload": "Upload New Resume (PDF)",
+    "invalidJson": "Error: Invalid JSON file.",
+    "confirmReset": "Reset all data to defaults? This cannot be undone.",
+    "entryNumber": "Entry #",
+    "categoryLabel": "Category",
+    "skillsLabel": "Skills",
+    "skillName": "Skill Name",
+    "skillLevel": "Level"
+  },
+  "loading": {
+    "text": "Loading"
+  }
+}

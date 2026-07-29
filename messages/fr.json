@@ -1,0 +1,168 @@
+{
+  "nav": {
+    "home": "Accueil",
+    "about": "À propos",
+    "skills": "Compétences",
+    "projects": "Projets",
+    "experience": "Expérience",
+    "testimonials": "Témoignages",
+    "blog": "Journal",
+    "contact": "Contact",
+    "resume": "CV",
+    "admin": "Admin"
+  },
+  "theme": {
+    "light": "Clair",
+    "dark": "Sombre"
+  },
+  "language": {
+    "fr": "Français",
+    "en": "English"
+  },
+  "hero": {
+    "cta": "Découvrir mes projets",
+    "scroll": "Défiler"
+  },
+  "about": {
+    "title": "À Propos",
+    "philosophy": "Philosophie",
+    "education": "Formation"
+  },
+  "skills": {
+    "title": "Compétences"
+  },
+  "projects": {
+    "title": "Projets",
+    "all": "Tous",
+    "viewProject": "Voir le projet",
+    "location": "Lieu",
+    "year": "Année",
+    "software": "Logiciels",
+    "concept": "Concept",
+    "backToProjects": "Retour aux projets",
+    "gallery": "Galerie"
+  },
+  "experience": {
+    "title": "Expérience",
+    "present": "Présent"
+  },
+  "testimonials": {
+    "title": "Témoignages"
+  },
+  "blog": {
+    "title": "Journal",
+    "readMore": "Lire la suite",
+    "search": "Rechercher...",
+    "minRead": "min de lecture",
+    "close": "Fermer"
+  },
+  "contact": {
+    "title": "Contact",
+    "name": "Votre nom",
+    "email": "Votre email",
+    "subject": "Sujet",
+    "message": "Votre message...",
+    "send": "Envoyer",
+    "sending": "Envoi en cours...",
+    "success": "Message envoyé avec succès !",
+    "error": "Une erreur s'est produite."
+  },
+  "resume": {
+    "title": "Curriculum Vitae",
+    "download": "Télécharger le CV",
+    "preview": "Aperçu"
+  },
+  "footer": {
+    "copyright": "Tous droits réservés.",
+    "backToTop": "Retour en haut"
+  },
+  "admin": {
+    "title": "Panneau d'Administration",
+    "loginTitle": "Espace Client & Admin",
+    "loginSubtitle": "Panneau de contrôle pour modifier le contenu du portfolio",
+    "loginButton": "Accéder à l'Éditeur",
+    "backToSite": "Retour au site",
+    "passwordLabel": "Mot de passe d'accès",
+    "passwordPlaceholder": "••••••••••••",
+    "wrongPassword": "Mot de passe incorrect",
+    "viewSite": "Voir le site public",
+    "studioAdmin": "Studio Admin",
+    "saved": "Modifications enregistrées !",
+    "saveAll": "Enregistrer Tout",
+    "exportJson": "Exporter JSON",
+    "importJson": "Importer",
+    "resetDefaults": "Réinitialiser par défaut",
+    "logout": "Quitter",
+    "sections": "Gestion des Sections",
+    "editorTitle": "Éditeur Studio",
+    "hero": "Hero",
+    "about": "À Propos",
+    "projects": "Projets",
+    "skills": "Compétences",
+    "experience": "Expérience",
+    "testimonials": "Témoignages",
+    "blog": "Journal / Blog",
+    "contact": "Contact",
+    "resume": "CV / Resume",
+    "statsProjects": "Projets Réalisés",
+    "statsSkills": "Compétences",
+    "statsBlog": "Articles",
+    "statsExperience": "Expérience",
+    "statsTestimonials": "Témoignages",
+    "addProject": "Ajouter un Projet",
+    "addExperience": "Ajouter une Expérience",
+    "addTestimonial": "Ajouter un Témoignage",
+    "addBlogPost": "Ajouter un Article",
+    "addSocialLink": "Ajouter un Lien",
+    "searchPlaceholder": "Rechercher...",
+    "edit": "Éditer",
+    "delete": "Supprimer",
+    "deleteConfirm": "Supprimer cet élément ?",
+    "projectTitle": "Titre du Projet",
+    "shortDescription": "Description Courte",
+    "coverImage": "Image de Couverture",
+    "year": "Année",
+    "category": "Catégorie",
+    "categoryResidential": "Résidentiel",
+    "categoryCultural": "Culturel",
+    "categoryUrban": "Urbain",
+    "categoryConceptual": "Conceptuel",
+    "fullName": "Nom Complet",
+    "mainTitle": "Titre Principal",
+    "subtitle": "Sous-titre",
+    "introText": "Texte d'Introduction",
+    "ctaButton": "Bouton d'Action (CTA)",
+    "profilePhoto": "Photo de Profil / À Propos",
+    "philosophy": "Philosophie Architecturale",
+    "jobTitle": "Intitulé du Poste / Rôle",
+    "company": "Entreprise / École",
+    "location": "Localisation",
+    "startDate": "Date de Début",
+    "endDate": "Date de Fin",
+    "description": "Description",
+    "type": "Type",
+    "typeWork": "Travail",
+    "typeEducation": "Formation",
+    "typeInternship": "Stage",
+    "authorPhoto": "Photo d'Auteur",
+    "quote": "Citation",
+    "articleTitle": "Titre de l'Article",
+    "bannerImage": "Image Banner de l'Article",
+    "email": "Email Officiel",
+    "phone": "Numéro de Téléphone",
+    "socialLinks": "Réseaux Sociaux & Liens Portfolio",
+    "platform": "Plateforme",
+    "url": "URL",
+    "resumeUpload": "Télécharger un Nouveau CV (PDF)",
+    "invalidJson": "Erreur : Fichier JSON invalide.",
+    "confirmReset": "Réinitialiser toutes les données ? Cette action est irréversible.",
+    "entryNumber": "Entrée #",
+    "categoryLabel": "Catégorie",
+    "skillsLabel": "Compétences",
+    "skillName": "Nom de la Compétence",
+    "skillLevel": "Niveau"
+  },
+  "loading": {
+    "text": "Chargement"
+  }
+}
