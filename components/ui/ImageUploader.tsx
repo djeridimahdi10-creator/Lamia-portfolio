@@ -284,7 +284,7 @@ export function ImageUploader({
         </div>
       ) : value ? (
         /* Preview Card */
-        <div className="relative group border border-[#E4E4E7] dark:border-[#27272A] rounded-xl overflow-hidden bg-[#FAFAFA] dark:bg-[#18181B] p-3 flex flex-col sm:flex-row items-center gap-4">
+        <div className="relative group border border-[#E4E4E7] dark:border-[#1C1C1C] rounded-xl overflow-hidden bg-[#FAFAFA] dark:bg-[#0D0D0D] p-3 flex flex-col sm:flex-row items-center gap-4">
           <div className={`relative overflow-hidden rounded-lg border border-[#C5A059]/30 bg-black/5 dark:bg-white/5 ${aspectClasses} shrink-0 w-full sm:w-auto`}>
             {isPdf ? (
               <div className="w-full h-full flex flex-col items-center justify-center p-3 text-center bg-[#C5A059]/10">
@@ -346,7 +346,7 @@ export function ImageUploader({
           className={`relative cursor-pointer border-2 border-dashed rounded-xl p-6 text-center transition-all duration-200 ${
             isDragging
               ? "border-[#C5A059] bg-[#C5A059]/10 scale-[0.99]"
-              : "border-[#E4E4E7] dark:border-[#27272A] hover:border-[#C5A059]/50 bg-[#FAFAFA] dark:bg-[#18181B]"
+              : "border-[#E4E4E7] dark:border-[#1C1C1C] hover:border-[#C5A059]/50 bg-[#FAFAFA] dark:bg-[#0D0D0D]"
           }`}
         >
           <input ref={fileInputRef} type="file" accept={accept} onChange={handleInputChange} className="hidden" />

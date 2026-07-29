@@ -35,7 +35,7 @@ function ProjectCard({
       animate={{ opacity: 1, y: 0, scale: 1 }}
       exit={{ opacity: 0, scale: 0.95 }}
       transition={{ duration: 0.4, delay: index * 0.05 }}
-      className={`group relative overflow-hidden cursor-pointer rounded-2xl bg-white dark:bg-[#161616] border border-[#E4E4E7] dark:border-[#27272A] hover:border-[#C5A059]/60 shadow-card hover:shadow-card-hover transition-all duration-350 ${
+      className={`group relative overflow-hidden cursor-pointer rounded-2xl bg-white dark:bg-[#111111] border border-[#E4E4E7] dark:border-[#1C1C1C] hover:border-[#C5A059]/60 shadow-card hover:shadow-card-hover transition-all duration-350 ${
         project.featured ? "md:col-span-2 md:row-span-2" : ""
       }`}
       onMouseEnter={() => setIsHovered(true)}
@@ -43,7 +43,7 @@ function ProjectCard({
       onClick={onClick}
     >
       {/* Project Cover Image / Architectural Fallback */}
-      <div className={`relative w-full bg-[#FAFAFA] dark:bg-[#1A1A1A] overflow-hidden ${project.featured ? "aspect-[16/10]" : "aspect-[4/3]"}`}>
+      <div className={`relative w-full bg-[#FAFAFA] dark:bg-[#141414] overflow-hidden ${project.featured ? "aspect-[16/10]" : "aspect-[4/3]"}`}>
         {project.coverImage && !imgError ? (
           <img
             src={project.coverImage}
@@ -188,7 +188,7 @@ export function Projects({ locale }: ProjectsProps) {
   ];
 
   return (
-    <section id="projects" className="relative py-28 lg:py-36 bg-[#FAF9F6] dark:bg-[#0F0F0F]">
+    <section id="projects" className="relative py-28 lg:py-36 bg-[#FAF9F6] dark:bg-[#0A0A0A]">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <SectionHeader
           title={getLocalizedText(data.sectionTitle, locale)}
@@ -251,20 +251,20 @@ export function Projects({ locale }: ProjectsProps) {
               animate={{ y: 0, opacity: 1 }}
               exit={{ y: 30, opacity: 0 }}
               transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
-              className="relative w-full max-w-4xl bg-white dark:bg-[#161616] border border-[#E4E4E7] dark:border-[#27272A] rounded-2xl shadow-2xl overflow-hidden my-auto flex flex-col max-h-[90vh]"
+              className="relative w-full max-w-4xl bg-white dark:bg-[#111111] border border-[#E4E4E7] dark:border-[#1C1C1C] rounded-2xl shadow-2xl overflow-hidden my-auto flex flex-col max-h-[90vh]"
               onClick={(e) => e.stopPropagation()}
             >
               {/* Close Button */}
               <button
                 onClick={() => setSelectedProjectId(null)}
-                className="absolute top-5 right-5 z-30 p-2.5 rounded-full bg-white/80 dark:bg-[#161616]/80 backdrop-blur-md text-[#0A0A0A] dark:text-[#EDEDEF] hover:text-[#C5A059] shadow-lg cursor-pointer transition-colors duration-300"
+                className="absolute top-5 right-5 z-30 p-2.5 rounded-full bg-white/80 dark:bg-[#111111]/80 backdrop-blur-md text-[#0A0A0A] dark:text-[#EDEDEF] hover:text-[#C5A059] shadow-lg cursor-pointer transition-colors duration-300"
                 aria-label="Close project modal"
               >
                 <X className="w-5 h-5" />
               </button>
 
               {/* Main Image Lightbox Viewer */}
-              <div className="relative h-72 sm:h-[26rem] w-full bg-[#FAFAFA] dark:bg-[#1A1A1A] shrink-0 overflow-hidden">
+              <div className="relative h-72 sm:h-[26rem] w-full bg-[#FAFAFA] dark:bg-[#141414] shrink-0 overflow-hidden">
                 <AnimatePresence mode="wait">
                   <motion.img
                     key={activeImageToShow}
@@ -288,7 +288,7 @@ export function Projects({ locale }: ProjectsProps) {
 
               {/* Gallery Thumbnails Strip */}
               {galleryImages.length > 1 && (
-                <div className="px-6 pt-4 flex gap-2 overflow-x-auto bg-[#FAFAFA] dark:bg-[#1A1A1A] border-b border-[#E4E4E7] dark:border-[#27272A]">
+                <div className="px-6 pt-4 flex gap-2 overflow-x-auto bg-[#FAFAFA] dark:bg-[#141414] border-b border-[#E4E4E7] dark:border-[#1C1C1C]">
                   {galleryImages.map((img, i) => (
                     <button
                       key={i}
@@ -313,7 +313,7 @@ export function Projects({ locale }: ProjectsProps) {
                     {getLocalizedText(selectedProject.title, locale)}
                   </h2>
 
-                  <div className="flex flex-wrap items-center gap-4 text-xs font-mono text-[#52525B] dark:text-[#A1A1AA] pb-4 border-b border-[#E4E4E7] dark:border-[#27272A]">
+                  <div className="flex flex-wrap items-center gap-4 text-xs font-mono text-[#52525B] dark:text-[#A1A1AA] pb-4 border-b border-[#E4E4E7] dark:border-[#1C1C1C]">
                     <span className="flex items-center gap-1.5">
                       <MapPin className="w-3.5 h-3.5 text-[#C5A059]" />
                       {getLocalizedText(selectedProject.location, locale)}
@@ -347,7 +347,7 @@ export function Projects({ locale }: ProjectsProps) {
 
                 {/* Architectural Concept */}
                 {selectedProject.concept && (
-                  <div className="p-4 rounded-2xl bg-[#FAF9F6] dark:bg-[#1A1A1A] border border-[#E4E4E7] dark:border-[#27272A] border-l-4 border-l-[#C5A059]">
+                  <div className="p-4 rounded-2xl bg-[#FAF9F6] dark:bg-[#141414] border border-[#E4E4E7] dark:border-[#1C1C1C] border-l-4 border-l-[#C5A059]">
                     <p className="text-[10px] uppercase font-bold tracking-[0.2em] text-[#C5A059] mb-1">
                       {locale === "fr" ? "Concept Architectural" : "Architectural Concept"}
                     </p>

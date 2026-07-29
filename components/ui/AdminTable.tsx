@@ -146,7 +146,7 @@ export function AdminTable<T>({
               type="button"
               disabled={currentPage === 1}
               onClick={() => setCurrentPage((p) => Math.max(1, p - 1))}
-              className="p-1.5 rounded-md border border-[#E4E4E7] dark:border-[#27272A] disabled:opacity-40 disabled:cursor-not-allowed hover:bg-black/5 dark:hover:bg-white/5 cursor-pointer"
+              className="p-1.5 rounded-md border border-[#E4E4E7] dark:border-[#1C1C1C] disabled:opacity-40 disabled:cursor-not-allowed hover:bg-black/5 dark:hover:bg-white/5 cursor-pointer"
             >
               <ChevronLeft className="w-4 h-4" />
             </button>
@@ -157,7 +157,7 @@ export function AdminTable<T>({
               type="button"
               disabled={currentPage === totalPages}
               onClick={() => setCurrentPage((p) => Math.min(totalPages, p + 1))}
-              className="p-1.5 rounded-md border border-[#E4E4E7] dark:border-[#27272A] disabled:opacity-40 disabled:cursor-not-allowed hover:bg-black/5 dark:hover:bg-white/5 cursor-pointer"
+              className="p-1.5 rounded-md border border-[#E4E4E7] dark:border-[#1C1C1C] disabled:opacity-40 disabled:cursor-not-allowed hover:bg-black/5 dark:hover:bg-white/5 cursor-pointer"
             >
               <ChevronRight className="w-4 h-4" />
             </button>

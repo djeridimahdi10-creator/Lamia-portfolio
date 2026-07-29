@@ -70,7 +70,7 @@ export function Skills({ locale }: SkillsProps) {
   }));
 
   return (
-    <section id="skills" className="relative py-28 lg:py-36 bg-[#FAF9F6] dark:bg-[#0F0F0F]">
+    <section id="skills" className="relative py-28 lg:py-36 bg-[#FAF9F6] dark:bg-[#0A0A0A]">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <SectionHeader
           title={getLocalizedText(data.sectionTitle, locale)}
@@ -90,8 +90,8 @@ export function Skills({ locale }: SkillsProps) {
 
         {/* Active Category Box */}
         <SectionReveal key={activeCategory} delay={0.1}>
-          <div className="max-w-4xl mx-auto p-8 lg:p-12 rounded-2xl bg-white dark:bg-[#161616] border border-[#E4E4E7] dark:border-[#27272A] shadow-xl">
-            <div className="flex items-center gap-4 mb-8 pb-6 border-b border-[#E4E4E7] dark:border-[#27272A]">
+          <div className="max-w-4xl mx-auto p-8 lg:p-12 rounded-2xl bg-white dark:bg-[#111111] border border-[#E4E4E7] dark:border-[#1C1C1C] shadow-xl">
+            <div className="flex items-center gap-4 mb-8 pb-6 border-b border-[#E4E4E7] dark:border-[#1C1C1C]">
               <div className="w-12 h-12 rounded-xl bg-[#C5A059] text-white flex items-center justify-center shadow-md shadow-[#C5A059]/20">
                 {(() => {
                   const Icon = iconMap[data.categories[activeCategory].icon] || Pen;

@@ -38,7 +38,7 @@ export function Contact({ locale }: ContactProps) {
   };
 
   return (
-    <section id="contact" className="relative py-28 lg:py-36 bg-[#FAF9F6] dark:bg-[#0F0F0F]">
+    <section id="contact" className="relative py-28 lg:py-36 bg-[#FAF9F6] dark:bg-[#0A0A0A]">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <SectionHeader
           title={getLocalizedText(data.sectionTitle, locale)}
@@ -50,7 +50,7 @@ export function Contact({ locale }: ContactProps) {
           <SectionReveal direction="left" className="lg:col-span-5">
             <div className="space-y-4">
               {/* Email */}
-              <div className="p-5 rounded-2xl bg-white dark:bg-[#161616] border border-[#E4E4E7] dark:border-[#27272A] shadow-sm flex items-center justify-between group hover:border-[#C5A059]/40 hover:shadow-md transition-all duration-300">
+              <div className="p-5 rounded-2xl bg-white dark:bg-[#111111] border border-[#E4E4E7] dark:border-[#1C1C1C] shadow-sm flex items-center justify-between group hover:border-[#C5A059]/40 hover:shadow-md transition-all duration-300">
                 <div className="flex items-center gap-3.5">
                   <div className="w-10 h-10 rounded-xl bg-[#C5A059]/10 text-[#C5A059] flex items-center justify-center">
                     <Mail className="w-5 h-5" />
@@ -76,7 +76,7 @@ export function Contact({ locale }: ContactProps) {
               </div>
 
               {/* Phone */}
-              <div className="p-5 rounded-2xl bg-white dark:bg-[#161616] border border-[#E4E4E7] dark:border-[#27272A] shadow-sm flex items-center justify-between group hover:border-[#C5A059]/40 hover:shadow-md transition-all duration-300">
+              <div className="p-5 rounded-2xl bg-white dark:bg-[#111111] border border-[#E4E4E7] dark:border-[#1C1C1C] shadow-sm flex items-center justify-between group hover:border-[#C5A059]/40 hover:shadow-md transition-all duration-300">
                 <div className="flex items-center gap-3.5">
                   <div className="w-10 h-10 rounded-xl bg-[#C5A059]/10 text-[#C5A059] flex items-center justify-center">
                     <Phone className="w-5 h-5" />
@@ -104,7 +104,7 @@ export function Contact({ locale }: ContactProps) {
               </div>
 
               {/* Location */}
-              <div className="p-5 rounded-2xl bg-white dark:bg-[#161616] border border-[#E4E4E7] dark:border-[#27272A] shadow-sm flex items-center gap-3.5 hover:border-[#C5A059]/40 hover:shadow-md transition-all duration-300">
+              <div className="p-5 rounded-2xl bg-white dark:bg-[#111111] border border-[#E4E4E7] dark:border-[#1C1C1C] shadow-sm flex items-center gap-3.5 hover:border-[#C5A059]/40 hover:shadow-md transition-all duration-300">
                 <div className="w-10 h-10 rounded-xl bg-[#C5A059]/10 text-[#C5A059] flex items-center justify-center">
                   <MapPin className="w-5 h-5" />
                 </div>
@@ -119,7 +119,7 @@ export function Contact({ locale }: ContactProps) {
               </div>
 
               {/* Social Links */}
-              <div className="pt-4 border-t border-[#E4E4E7] dark:border-[#27272A]">
+              <div className="pt-4 border-t border-[#E4E4E7] dark:border-[#1C1C1C]">
                 <p className="text-[10px] uppercase font-bold tracking-[0.2em] text-[#71717A] mb-3">
                   {locale === "fr" ? "Réseaux sociaux" : "Social Links"}
                 </p>
@@ -130,7 +130,7 @@ export function Contact({ locale }: ContactProps) {
                       href={social.url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="p-3 rounded-xl bg-white dark:bg-[#161616] border border-[#E4E4E7] dark:border-[#27272A] text-[#52525B] dark:text-[#A1A1AA] hover:text-[#C5A059] hover:border-[#C5A059]/40 hover:shadow-md transition-all duration-300 shadow-sm"
+                      className="p-3 rounded-xl bg-white dark:bg-[#111111] border border-[#E4E4E7] dark:border-[#1C1C1C] text-[#52525B] dark:text-[#A1A1AA] hover:text-[#C5A059] hover:border-[#C5A059]/40 hover:shadow-md transition-all duration-300 shadow-sm"
                       aria-label={social.platform}
                     >
                       <SocialIcon platform={social.platform} size={16} />
@@ -143,7 +143,7 @@ export function Contact({ locale }: ContactProps) {
 
           {/* Form Side */}
           <SectionReveal direction="right" className="lg:col-span-7">
-            <div className="p-8 sm:p-10 rounded-2xl bg-white dark:bg-[#161616] border border-[#E4E4E7] dark:border-[#27272A] shadow-xl">
+            <div className="p-8 sm:p-10 rounded-2xl bg-white dark:bg-[#111111] border border-[#E4E4E7] dark:border-[#1C1C1C] shadow-xl">
               <h3 className="font-playfair text-2xl font-bold text-[#0A0A0A] dark:text-[#EDEDEF] mb-6">
                 {locale === "fr" ? "Envoyez-moi un message" : "Send me a message"}
               </h3>

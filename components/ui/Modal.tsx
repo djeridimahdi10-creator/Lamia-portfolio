@@ -123,12 +123,12 @@ export function Modal({
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.95, y: 15 }}
             transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
-            className={`relative w-full ${sizeClasses} bg-white dark:bg-[#141414] border border-[#E4E4E7] dark:border-[#27272A] rounded-xl shadow-2xl overflow-hidden my-auto pointer-events-auto flex flex-col max-h-[90vh]`}
+            className={`relative w-full ${sizeClasses} bg-white dark:bg-[#0D0D0D] border border-[#E4E4E7] dark:border-[#1C1C1C] rounded-xl shadow-2xl overflow-hidden my-auto pointer-events-auto flex flex-col max-h-[90vh]`}
             onClick={(e) => e.stopPropagation()}
           >
             {/* Header */}
             {title && (
-              <div className="flex items-center justify-between px-5 sm:px-6 py-4.5 border-b border-[#E4E4E7] dark:border-[#27272A] bg-[#FAFAFA] dark:bg-[#18181B]">
+              <div className="flex items-center justify-between px-5 sm:px-6 py-4.5 border-b border-[#E4E4E7] dark:border-[#1C1C1C] bg-[#FAFAFA] dark:bg-[#0D0D0D]">
                 <div className="min-w-0 flex-1">
                   <h3 className="font-playfair text-base sm:text-lg font-bold text-[#0A0A0A] dark:text-[#EDEDEF] truncate">
                     {title}
@@ -154,7 +154,7 @@ export function Modal({
 
             {/* Footer Actions */}
             {footer && (
-              <div className="flex items-center justify-end gap-3 px-5 sm:px-6 py-4 border-t border-[#E4E4E7] dark:border-[#27272A] bg-[#FAFAFA] dark:bg-[#18181B]">
+              <div className="flex items-center justify-end gap-3 px-5 sm:px-6 py-4 border-t border-[#E4E4E7] dark:border-[#1C1C1C] bg-[#FAFAFA] dark:bg-[#0D0D0D]">
                 {footer}
               </div>
             )}

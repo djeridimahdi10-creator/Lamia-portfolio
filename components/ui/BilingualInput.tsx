@@ -96,7 +96,7 @@ export function BilingualInput({
       ) : (
         /* Tabbed mode */
         <div className="space-y-2">
-          <div className="flex items-center gap-2 border-b border-[#E4E4E7] dark:border-[#27272A] pb-1">
+          <div className="flex items-center gap-2 border-b border-[#E4E4E7] dark:border-[#1C1C1C] pb-1">
             <button
               type="button"
               onClick={() => setActiveTab("fr")}

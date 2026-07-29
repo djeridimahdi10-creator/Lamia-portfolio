@@ -37,7 +37,7 @@ export function Experience({ locale }: ExperienceProps) {
   ];
 
   return (
-    <section id="experience" className="relative py-28 lg:py-36 bg-white dark:bg-[#0F0F0F]">
+    <section id="experience" className="relative py-28 lg:py-36 bg-white dark:bg-[#0A0A0A]">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <SectionHeader
           title={getLocalizedText(data.sectionTitle, locale)}
@@ -74,7 +74,7 @@ export function Experience({ locale }: ExperienceProps) {
                     {/* Content Card */}
                     <div className={`flex-1 ml-12 md:ml-0 ${isLeft ? "md:pr-10 md:text-right" : "md:pl-10 md:text-left"}`}>
                       <motion.div
-                        className="p-6 rounded-2xl bg-white dark:bg-[#161616] border border-[#E4E4E7] dark:border-[#27272A] hover:border-[#C5A059]/40 transition-all duration-300 shadow-sm hover:shadow-md group"
+                        className="p-6 rounded-2xl bg-white dark:bg-[#111111] border border-[#E4E4E7] dark:border-[#1C1C1C] hover:border-[#C5A059]/40 transition-all duration-300 shadow-sm hover:shadow-md group"
                         whileHover={{ y: -3 }}
                       >
                         {/* Date & Type Badge */}

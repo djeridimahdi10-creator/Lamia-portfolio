@@ -90,8 +90,8 @@ export function Navbar({ locale }: NavbarProps) {
         <div
           className={`max-w-7xl mx-auto flex items-center justify-between px-4 sm:px-6 py-2.5 sm:py-3 rounded-2xl transition-all duration-300 pointer-events-auto ${
             scrolled
-              ? "bg-white/80 dark:bg-[#0F0F0F]/80 backdrop-blur-xl border border-[#E4E4E7]/60 dark:border-[#27272A]/60 shadow-lg shadow-black/[0.03]"
-              : "bg-white/40 dark:bg-[#0F0F0F]/40 backdrop-blur-sm border border-transparent"
+              ? "bg-white/80 dark:bg-[#0A0A0A]/80 backdrop-blur-xl border border-[#E4E4E7]/60 dark:border-[#1C1C1C]/60 shadow-lg shadow-black/[0.03]"
+              : "bg-white/40 dark:bg-[#0A0A0A]/40 backdrop-blur-sm border border-transparent"
           }`}
         >
           {/* Logo Badge */}
@@ -112,7 +112,7 @@ export function Navbar({ locale }: NavbarProps) {
           </a>
 
           {/* Desktop Navigation Links */}
-          <nav className="hidden lg:flex items-center gap-1 bg-black/[0.03] dark:bg-white/[0.03] p-1 rounded-xl border border-[#E4E4E7]/40 dark:border-[#27272A]/40">
+          <nav className="hidden lg:flex items-center gap-1 bg-black/[0.03] dark:bg-white/[0.02] p-1 rounded-xl border border-[#E4E4E7]/40 dark:border-[#1C1C1C]/40">
             {navLinks.map((item) => {
               const sectionId = item.href.replace("#", "");
               const isActive = activeSection === sectionId;
@@ -134,7 +134,7 @@ export function Navbar({ locale }: NavbarProps) {
                   {isActive && (
                     <motion.div
                       layoutId="activeNavBackground"
-                      className="absolute inset-0 bg-white dark:bg-[#1A1A1A] rounded-lg shadow-sm"
+                      className="absolute inset-0 bg-white dark:bg-[#141414] rounded-lg shadow-sm"
                       transition={{ type: "spring", stiffness: 380, damping: 30 }}
                     />
                   )}
@@ -163,7 +163,7 @@ export function Navbar({ locale }: NavbarProps) {
             {/* Theme Toggle */}
             <button
               onClick={toggleTheme}
-              className="relative flex items-center justify-center w-9 h-9 rounded-xl bg-black/[0.03] dark:bg-white/[0.03] border border-[#E4E4E7]/40 dark:border-[#27272A]/40 hover:border-[#C5A059]/50 hover:bg-[#C5A059]/5 transition-all duration-300 cursor-pointer overflow-hidden"
+              className="relative flex items-center justify-center w-9 h-9 rounded-xl bg-black/[0.03] dark:bg-white/[0.02] border border-[#E4E4E7]/40 dark:border-[#1C1C1C]/40 hover:border-[#C5A059]/50 hover:bg-[#C5A059]/5 transition-all duration-300 cursor-pointer overflow-hidden"
               aria-label={isDark ? "Switch to light mode" : "Switch to dark mode"}
             >
               <AnimatePresence mode="wait" initial={false}>
@@ -194,7 +194,7 @@ export function Navbar({ locale }: NavbarProps) {
             {/* Language Switch */}
             <button
               onClick={switchLocale}
-              className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-[10px] font-bold text-[#71717A] dark:text-[#A1A1AA] hover:text-[#0A0A0A] dark:hover:text-[#EDEDEF] bg-black/[0.03] dark:bg-white/[0.03] hover:bg-black/[0.06] dark:hover:bg-white/[0.06] transition-colors duration-300 cursor-pointer border border-[#E4E4E7]/40 dark:border-[#27272A]/40"
+              className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-[10px] font-bold text-[#71717A] dark:text-[#A1A1AA] hover:text-[#0A0A0A] dark:hover:text-[#EDEDEF] bg-black/[0.03] dark:bg-white/[0.02] hover:bg-black/[0.06] dark:hover:bg-white/[0.06] transition-colors duration-300 cursor-pointer border border-[#E4E4E7]/40 dark:border-[#1C1C1C]/40"
               aria-label="Switch language"
             >
               <Globe className="w-3.5 h-3.5 text-[#C5A059]" />
@@ -206,7 +206,7 @@ export function Navbar({ locale }: NavbarProps) {
             {/* Mobile Menu Trigger */}
             <button
               onClick={() => setMobileOpen(!mobileOpen)}
-              className="lg:hidden p-2 rounded-xl text-[#0A0A0A] dark:text-[#EDEDEF] bg-black/[0.03] dark:bg-white/[0.03] transition-colors duration-300 cursor-pointer"
+              className="lg:hidden p-2 rounded-xl text-[#0A0A0A] dark:text-[#EDEDEF] bg-black/[0.03] dark:bg-white/[0.02] transition-colors duration-300 cursor-pointer"
               aria-label="Toggle mobile menu"
             >
               {mobileOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
@@ -223,7 +223,7 @@ export function Navbar({ locale }: NavbarProps) {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.2 }}
-            className="fixed inset-0 z-40 bg-[#FAF9F6]/98 dark:bg-[#0F0F0F]/98 backdrop-blur-2xl lg:hidden flex flex-col justify-between p-6 pt-28"
+            className="fixed inset-0 z-40 bg-[#FAF9F6]/98 dark:bg-[#0A0A0A]/98 backdrop-blur-2xl lg:hidden flex flex-col justify-between p-6 pt-28"
           >
             <div className="flex flex-col items-center justify-center space-y-5 my-auto">
               {navLinks.map((item, index) => {
@@ -250,11 +250,11 @@ export function Navbar({ locale }: NavbarProps) {
               })}
             </div>
 
-            <div className="flex items-center justify-center gap-3 pt-6 border-t border-[#E4E4E7] dark:border-[#27272A]">
+            <div className="flex items-center justify-center gap-3 pt-6 border-t border-[#E4E4E7] dark:border-[#1C1C1C]">
               {/* Mobile Theme Toggle */}
               <button
                 onClick={toggleTheme}
-                className="p-3 rounded-xl text-[#71717A] dark:text-[#A1A1AA] hover:text-[#C5A059] bg-white dark:bg-[#161616] border border-[#E4E4E7] dark:border-[#27272A] transition-all duration-300 cursor-pointer"
+                className="p-3 rounded-xl text-[#71717A] dark:text-[#A1A1AA] hover:text-[#C5A059] bg-white dark:bg-[#111111] border border-[#E4E4E7] dark:border-[#1C1C1C] transition-all duration-300 cursor-pointer"
                 aria-label={isDark ? "Switch to light mode" : "Switch to dark mode"}
               >
                 <AnimatePresence mode="wait" initial={false}>

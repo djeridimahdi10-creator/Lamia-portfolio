@@ -47,7 +47,7 @@ export function Blog({ locale }: BlogProps) {
   };
 
   return (
-    <section id="blog" className="relative py-28 lg:py-36 bg-white dark:bg-[#0F0F0F]">
+    <section id="blog" className="relative py-28 lg:py-36 bg-white dark:bg-[#0A0A0A]">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <SectionHeader
           title={getLocalizedText(data.sectionTitle, locale)}
@@ -63,7 +63,7 @@ export function Blog({ locale }: BlogProps) {
               placeholder={getLocalizedText(data.searchPlaceholder, locale)}
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full pl-11 pr-4 py-3 rounded-full bg-[#FAF9F6] dark:bg-[#161616] border border-[#E4E4E7] dark:border-[#27272A] text-xs text-[#0A0A0A] dark:text-[#EDEDEF] shadow-sm focus:border-[#C5A059] focus:ring-2 focus:ring-[#C5A059]/10 outline-none transition-all duration-300"
+              className="w-full pl-11 pr-4 py-3 rounded-full bg-[#FAF9F6] dark:bg-[#111111] border border-[#E4E4E7] dark:border-[#1C1C1C] text-xs text-[#0A0A0A] dark:text-[#EDEDEF] shadow-sm focus:border-[#C5A059] focus:ring-2 focus:ring-[#C5A059]/10 outline-none transition-all duration-300"
             />
           </div>
         </SectionReveal>
@@ -73,13 +73,13 @@ export function Blog({ locale }: BlogProps) {
           {filteredPosts.map((post, index) => (
             <SectionReveal key={post.id} delay={index * 0.08}>
               <motion.article
-                className="group rounded-2xl bg-[#FAF9F6] dark:bg-[#161616] border border-[#E4E4E7] dark:border-[#27272A] hover:border-[#C5A059]/60 transition-all duration-350 cursor-pointer overflow-hidden shadow-card hover:shadow-card-hover flex flex-col justify-between"
+                className="group rounded-2xl bg-[#FAF9F6] dark:bg-[#111111] border border-[#E4E4E7] dark:border-[#1C1C1C] hover:border-[#C5A059]/60 transition-all duration-350 cursor-pointer overflow-hidden shadow-card hover:shadow-card-hover flex flex-col justify-between"
                 whileHover={{ y: -4 }}
                 onClick={() => setSelectedPost(post.id)}
               >
                 <div>
                   {/* Thumbnail */}
-                  <div className="aspect-[16/10] bg-[#F4F4F5] dark:bg-[#1A1A1A] relative overflow-hidden">
+                  <div className="aspect-[16/10] bg-[#F4F4F5] dark:bg-[#141414] relative overflow-hidden">
                     {post.thumbnail ? (
                       <img
                         src={post.thumbnail}
@@ -147,18 +147,18 @@ export function Blog({ locale }: BlogProps) {
               animate={{ y: 0, opacity: 1 }}
               exit={{ y: 30, opacity: 0 }}
               transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
-              className="relative w-full max-w-4xl bg-white dark:bg-[#161616] border border-[#E4E4E7] dark:border-[#27272A] rounded-2xl shadow-2xl overflow-hidden my-auto"
+              className="relative w-full max-w-4xl bg-white dark:bg-[#111111] border border-[#E4E4E7] dark:border-[#1C1C1C] rounded-2xl shadow-2xl overflow-hidden my-auto"
               onClick={(e) => e.stopPropagation()}
             >
               <button
                 onClick={() => setSelectedPost(null)}
-                className="absolute top-5 right-5 z-20 p-2.5 rounded-full bg-white/80 dark:bg-[#161616]/80 backdrop-blur-md text-[#0A0A0A] dark:text-[#EDEDEF] hover:text-[#C5A059] shadow-lg cursor-pointer transition-colors duration-300"
+                className="absolute top-5 right-5 z-20 p-2.5 rounded-full bg-white/80 dark:bg-[#111111]/80 backdrop-blur-md text-[#0A0A0A] dark:text-[#EDEDEF] hover:text-[#C5A059] shadow-lg cursor-pointer transition-colors duration-300"
                 aria-label="Close article"
               >
                 <X className="w-5 h-5" />
               </button>
 
-              <div className="relative h-64 sm:h-96 w-full bg-[#FAFAFA] dark:bg-[#1A1A1A] overflow-hidden">
+              <div className="relative h-64 sm:h-96 w-full bg-[#FAFAFA] dark:bg-[#141414] overflow-hidden">
                 {openPost.thumbnail && (
                   <img
                     src={openPost.thumbnail}
@@ -179,7 +179,7 @@ export function Blog({ locale }: BlogProps) {
                   {getLocalizedText(openPost.title, locale)}
                 </h1>
 
-                <div className="flex flex-wrap items-center justify-between gap-4 pb-4 border-b border-[#E4E4E7] dark:border-[#27272A] text-xs text-[#52525B] dark:text-[#A1A1AA] font-mono">
+                <div className="flex flex-wrap items-center justify-between gap-4 pb-4 border-b border-[#E4E4E7] dark:border-[#1C1C1C] text-xs text-[#52525B] dark:text-[#A1A1AA] font-mono">
                   <div className="flex items-center gap-3">
                     <span className="flex items-center gap-1 font-semibold text-[#0A0A0A] dark:text-[#EDEDEF]">
                       <User className="w-3.5 h-3.5 text-[#C5A059]" /> Lamia Akoubache

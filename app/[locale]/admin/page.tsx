@@ -219,7 +219,7 @@ export default function AdminPage() {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="w-full max-w-md p-8 sm:p-10 bg-white dark:bg-[#141414] border border-[#E4E4E7] dark:border-[#27272A] rounded-2xl shadow-2xl relative"
+          className="w-full max-w-md p-8 sm:p-10 bg-white dark:bg-[#0D0D0D] border border-[#E4E4E7] dark:border-[#1C1C1C] rounded-2xl shadow-2xl relative"
         >
           <a
             href={`/${currentLocale}`}
@@ -344,7 +344,7 @@ export default function AdminPage() {
       </Modal>
 
       {/* Header Bar */}
-      <header className="sticky top-0 z-50 bg-white/95 dark:bg-[#141414]/95 backdrop-blur-xl border-b border-[#E4E4E7] dark:border-[#27272A] shadow-xs">
+      <header className="sticky top-0 z-50 bg-white/95 dark:bg-[#0D0D0D]/95 backdrop-blur-xl border-b border-[#E4E4E7] dark:border-[#1C1C1C] shadow-xs">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 py-3.5 flex items-center justify-between">
           <div className="flex items-center gap-3 sm:gap-4">
             <a
@@ -392,7 +392,7 @@ export default function AdminPage() {
               <button
                 type="button"
                 onClick={() => setShowMobileMore(!showMobileMore)}
-                className="p-2 text-[#71717A] hover:text-[#C5A059] rounded-lg transition-colors cursor-pointer border border-[#E4E4E7] dark:border-[#27272A]"
+                className="p-2 text-[#71717A] hover:text-[#C5A059] rounded-lg transition-colors cursor-pointer border border-[#E4E4E7] dark:border-[#1C1C1C]"
               >
                 <MoreHorizontal className="w-4 h-4" />
               </button>
@@ -412,7 +412,7 @@ export default function AdminPage() {
                       animate={{ opacity: 1, y: 0, scale: 1 }}
                       exit={{ opacity: 0, y: -8, scale: 0.95 }}
                       transition={{ duration: 0.15 }}
-                      className="absolute right-0 top-full mt-1 z-50 w-48 bg-white dark:bg-[#141414] border border-[#E4E4E7] dark:border-[#27272A] rounded-xl shadow-xl overflow-hidden"
+                      className="absolute right-0 top-full mt-1 z-50 w-48 bg-white dark:bg-[#0D0D0D] border border-[#E4E4E7] dark:border-[#1C1C1C] rounded-xl shadow-xl overflow-hidden"
                     >
                       <button
                         type="button"
@@ -430,7 +430,7 @@ export default function AdminPage() {
                         <Upload className="w-4 h-4" />
                         <span>{t("importJson")}</span>
                       </button>
-                      <div className="border-t border-[#E4E4E7] dark:border-[#27272A]" />
+                      <div className="border-t border-[#E4E4E7] dark:border-[#1C1C1C]" />
                       <button
                         type="button"
                         onClick={() => {
@@ -546,7 +546,7 @@ export default function AdminPage() {
                       className={`flex items-center gap-1.5 px-3 py-2 rounded-lg text-[11px] uppercase tracking-wider font-semibold whitespace-nowrap transition-all duration-200 cursor-pointer ${
                         isActive
                           ? "bg-[#C5A059] text-white shadow-md shadow-[#C5A059]/25"
-                          : "bg-white dark:bg-[#141414] border border-[#E4E4E7] dark:border-[#27272A] text-[#71717A] hover:text-[#0A0A0A] dark:hover:text-[#F4F4F5]"
+                          : "bg-white dark:bg-[#0D0D0D] border border-[#E4E4E7] dark:border-[#1C1C1C] text-[#71717A] hover:text-[#0A0A0A] dark:hover:text-[#F4F4F5]"
                       }`}
                     >
                       <Icon className="w-3.5 h-3.5" />
@@ -614,7 +614,7 @@ export default function AdminPage() {
           {/* Section Content Area */}
           <section className="flex-1 min-w-0">
             <div className="admin-card p-5 sm:p-6 md:p-8 space-y-6 sm:space-y-8">
-              <div className="flex items-center justify-between pb-4 border-b border-[#E4E4E7] dark:border-[#27272A]">
+              <div className="flex items-center justify-between pb-4 border-b border-[#E4E4E7] dark:border-[#1C1C1C]">
                 <h2 className="font-playfair text-xl sm:text-2xl font-bold flex items-center gap-2">
                   <span className="text-[#C5A059]">{t("editorTitle")}:</span>
                   <span className="capitalize">{tabLabels[activeTab]}</span>
@@ -685,7 +685,7 @@ function HeroEditor({ data, onChange, locale }: { data: any; onChange: (val: any
   return (
     <div className="space-y-8">
       {/* Live Preview Card */}
-      <div className="admin-card p-5 sm:p-6 bg-gradient-to-br from-[#FAF9F6] to-white dark:from-[#18181B] dark:to-[#141414]">
+      <div className="admin-card p-5 sm:p-6 bg-gradient-to-br from-[#FAF9F6] to-white dark:from-[#0D0D0D] dark:to-[#0A0A0A]">
         <div className="flex items-center gap-2 mb-4">
           <Eye className="w-4 h-4 text-[#C5A059]" />
           <h4 className="text-xs uppercase tracking-widest font-bold text-[#C5A059]">Live Preview</h4>
@@ -711,7 +711,7 @@ function HeroEditor({ data, onChange, locale }: { data: any; onChange: (val: any
             <p className="text-sm font-semibold text-[#52525B] dark:text-[#A1A1AA] mt-1">
               {(data.title?.fr || data.title?.en) || "Title"}
             </p>
-            <div className="mt-2 inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white dark:bg-[#1A1A1A] border border-[#E4E4E7] dark:border-[#27272A] shadow-sm">
+            <div className="mt-2 inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white dark:bg-[#0D0D0D] border border-[#E4E4E7] dark:border-[#1C1C1C] shadow-sm">
               <span className="text-[10px] uppercase tracking-widest text-[#71717A] font-bold">
                 {locale === "fr" ? "Spécialité" : "Specialty"}
               </span>
@@ -843,7 +843,7 @@ function AboutEditor({ data, onChange, locale, onToast }: { data: any; onChange:
       />
 
       {/* Biography Paragraphs */}
-      <div className="space-y-4 pt-4 border-t border-[#E4E4E7] dark:border-[#27272A]">
+      <div className="space-y-4 pt-4 border-t border-[#E4E4E7] dark:border-[#1C1C1C]">
         <div className="flex items-center justify-between">
           <h4 className="text-xs font-bold uppercase tracking-wider text-[#C5A059]">
             Biography Paragraphs ({(biography.fr || []).length})
@@ -893,7 +893,7 @@ function AboutEditor({ data, onChange, locale, onToast }: { data: any; onChange:
       </div>
 
       {/* Education Section */}
-      <div className="space-y-4 pt-4 border-t border-[#E4E4E7] dark:border-[#27272A]">
+      <div className="space-y-4 pt-4 border-t border-[#E4E4E7] dark:border-[#1C1C1C]">
         <div className="flex items-center justify-between">
           <h4 className="text-xs font-bold uppercase tracking-wider text-[#C5A059] flex items-center gap-2">
             <GraduationCap className="w-4 h-4" />
@@ -935,7 +935,7 @@ function AboutEditor({ data, onChange, locale, onToast }: { data: any; onChange:
       </div>
 
       {/* Statistics Section */}
-      <div className="space-y-4 pt-4 border-t border-[#E4E4E7] dark:border-[#27272A]">
+      <div className="space-y-4 pt-4 border-t border-[#E4E4E7] dark:border-[#1C1C1C]">
         <h4 className="text-xs font-bold uppercase tracking-wider text-[#C5A059] flex items-center gap-2">
           <BarChart3 className="w-4 h-4" />
           Statistics ({statistics.length})
@@ -1020,7 +1020,7 @@ function ProjectsEditor({
     {
       header: "Cover",
       accessor: (p) => (
-        <div className="w-14 h-10 rounded-md overflow-hidden bg-black/5 dark:bg-white/5 border border-[#E4E4E7] dark:border-[#27272A]">
+        <div className="w-14 h-10 rounded-md overflow-hidden bg-black/5 dark:bg-white/5 border border-[#E4E4E7] dark:border-[#1C1C1C]">
           {p.coverImage ? (
             <img src={p.coverImage} alt="" className="w-full h-full object-cover" />
           ) : (
@@ -1229,7 +1229,7 @@ function SkillsEditor({
 
       {currentCat && (
         <div className="admin-card p-5 sm:p-6 space-y-4">
-          <div className="flex items-center justify-between pb-3 border-b border-[#E4E4E7] dark:border-[#27272A]">
+          <div className="flex items-center justify-between pb-3 border-b border-[#E4E4E7] dark:border-[#1C1C1C]">
             <h4 className="font-playfair text-lg font-bold text-[#C5A059]">
               Skills: {currentCat.title?.fr}
             </h4>
@@ -1241,7 +1241,7 @@ function SkillsEditor({
 
           <div className="space-y-3">
             {currentCat.skills.map((skill: any, sIdx: number) => (
-              <div key={sIdx} className="flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-4 p-3 bg-[#FAFAFA] dark:bg-[#18181B] border border-[#E4E4E7] dark:border-[#27272A] rounded-lg">
+              <div key={sIdx} className="flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-4 p-3 bg-[#FAFAFA] dark:bg-[#0D0D0D] border border-[#E4E4E7] dark:border-[#1C1C1C] rounded-lg">
                 <input
                   type="text"
                   value={skill.name}
@@ -1762,7 +1762,7 @@ function ContactEditor({ data, onChange }: { data: any; onChange: (val: any) => 
         />
       </div>
 
-      <div className="pt-4 border-t border-[#E4E4E7] dark:border-[#27272A] space-y-4">
+      <div className="pt-4 border-t border-[#E4E4E7] dark:border-[#1C1C1C] space-y-4">
         <div className="flex items-center justify-between">
           <h4 className="text-xs font-bold uppercase tracking-wider text-[#C5A059]">Social Networks ({socialLinks.length})</h4>
           <button type="button" onClick={addSocial} className="admin-btn-primary py-1.5 px-3 text-xs">
@@ -1773,7 +1773,7 @@ function ContactEditor({ data, onChange }: { data: any; onChange: (val: any) => 
 
         <div className="space-y-3">
           {socialLinks.map((s: any, idx: number) => (
-            <div key={idx} className="flex flex-col sm:flex-row items-start sm:items-center gap-3 p-3 bg-[#FAFAFA] dark:bg-[#18181B] border border-[#E4E4E7] dark:border-[#27272A] rounded-lg">
+            <div key={idx} className="flex flex-col sm:flex-row items-start sm:items-center gap-3 p-3 bg-[#FAFAFA] dark:bg-[#0D0D0D] border border-[#E4E4E7] dark:border-[#1C1C1C] rounded-lg">
               <input
                 type="text"
                 value={s.platform || ""}

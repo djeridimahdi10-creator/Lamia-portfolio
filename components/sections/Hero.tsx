@@ -22,7 +22,7 @@ export function Hero({ locale }: HeroProps) {
   return (
     <section
       id="hero"
-      className="relative min-h-screen flex items-center overflow-hidden bg-[#FAF9F6] dark:bg-[#0F0F0F]"
+      className="relative min-h-screen flex items-center overflow-hidden bg-[#FAF9F6] dark:bg-[#0A0A0A]"
     >
       {/* Subtle background grid pattern */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
@@ -145,7 +145,7 @@ export function Hero({ locale }: HeroProps) {
                 />
               )}
               {/* Profile image container */}
-              <div className="relative w-64 h-64 sm:w-80 sm:h-80 lg:w-[22rem] lg:h-[22rem] rounded-full overflow-hidden border-4 border-white dark:border-[#1A1A1A] shadow-2xl shadow-[#C5A059]/10">
+              <div className="relative w-64 h-64 sm:w-80 sm:h-80 lg:w-[22rem] lg:h-[22rem] rounded-full overflow-hidden border-2 border-[#C5A059]/30 dark:border-[#C5A059]/25 shadow-2xl shadow-[#C5A059]/10">
                 {data.profileImage ? (
                   <Image
                     src={data.profileImage}
@@ -168,7 +168,7 @@ export function Hero({ locale }: HeroProps) {
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 1.2, duration: 0.5 }}
-                  className="absolute -bottom-4 -left-4 sm:bottom-4 sm:-left-8 bg-white dark:bg-[#1A1A1A] rounded-xl px-4 py-3 shadow-lg border border-[#E4E4E7] dark:border-[#27272A]"
+                  className="absolute -bottom-4 -left-4 sm:bottom-4 sm:-left-8 bg-white dark:bg-[#111111] rounded-xl px-4 py-3 shadow-lg border border-[#E4E4E7] dark:border-[#1C1C1C]"
                 >
                   <p className="text-[10px] uppercase tracking-widest text-[#71717A] font-bold mb-0.5">
                     {locale === "fr" ? "Spécialité" : "Specialty"}

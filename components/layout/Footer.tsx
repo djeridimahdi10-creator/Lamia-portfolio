@@ -27,7 +27,7 @@ export function Footer({ locale }: FooterProps) {
   };
 
   return (
-    <footer className="relative z-10 border-t border-[#0A0A0A]/5 dark:border-white/5 bg-white/50 dark:bg-[#0F0F0F]/50 backdrop-blur-sm">
+    <footer className="relative z-10 border-t border-[#0A0A0A]/5 dark:border-white/5 bg-white/50 dark:bg-[#0A0A0A]/50 backdrop-blur-sm">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="flex flex-col md:flex-row items-center justify-between h-20">
           {/* Logo & Copyright */}

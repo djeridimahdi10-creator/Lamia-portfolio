@@ -89,8 +89,8 @@ export function ProjectGalleryManager({
   };
 
   return (
-    <div className="space-y-4 border border-[#E4E4E7] dark:border-[#27272A] p-4 rounded-xl bg-[#FAFAFA] dark:bg-[#18181B]">
-      <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-2 pb-3 border-b border-[#E4E4E7] dark:border-[#27272A]">
+    <div className="space-y-4 border border-[#E4E4E7] dark:border-[#1C1C1C] p-4 rounded-xl bg-[#FAFAFA] dark:bg-[#0D0D0D]">
+      <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-2 pb-3 border-b border-[#E4E4E7] dark:border-[#1C1C1C]">
         <div>
           <h4 className="text-xs font-bold uppercase tracking-wider text-[#0A0A0A] dark:text-[#F4F4F5] flex items-center gap-2">
             <ImageIcon className="w-4 h-4 text-[#C5A059]" />
@@ -130,7 +130,7 @@ export function ProjectGalleryManager({
       </div>
 
       {showUrlInput && (
-        <div className="flex gap-2 bg-white dark:bg-[#141414] p-2.5 rounded-lg border border-[#E4E4E7] dark:border-[#27272A]">
+        <div className="flex gap-2 bg-white dark:bg-[#0D0D0D] p-2.5 rounded-lg border border-[#E4E4E7] dark:border-[#1C1C1C]">
           <input
             type="text"
             value={urlInput}
@@ -152,10 +152,10 @@ export function ProjectGalleryManager({
             return (
               <div
                 key={idx}
-                className={`relative group rounded-xl overflow-hidden border-2 transition-all bg-white dark:bg-[#141414] ${
+                className={`relative group rounded-xl overflow-hidden border-2 transition-all bg-white dark:bg-[#0D0D0D] ${
                   isCover
                     ? "border-[#C5A059] shadow-md ring-2 ring-[#C5A059]/20"
-                    : "border-[#E4E4E7] dark:border-[#27272A] hover:border-[#C5A059]/50"
+                    : "border-[#E4E4E7] dark:border-[#1C1C1C] hover:border-[#C5A059]/50"
                 }`}
               >
                 {/* Thumbnail Image */}
@@ -172,7 +172,7 @@ export function ProjectGalleryManager({
                 )}
 
                 {/* Control Action Toolbar */}
-                <div className="p-2 bg-white/95 dark:bg-[#141414]/95 backdrop-blur-xs flex items-center justify-between gap-1 border-t border-[#E4E4E7] dark:border-[#27272A]">
+                <div className="p-2 bg-white/95 dark:bg-[#0D0D0D]/95 backdrop-blur-xs flex items-center justify-between gap-1 border-t border-[#E4E4E7] dark:border-[#1C1C1C]">
                   {!isCover && (
                     <button
                       type="button"
@@ -220,7 +220,7 @@ export function ProjectGalleryManager({
           })}
         </div>
       ) : (
-        <div className="py-8 text-center border-2 border-dashed border-[#E4E4E7] dark:border-[#27272A] rounded-xl">
+        <div className="py-8 text-center border-2 border-dashed border-[#E4E4E7] dark:border-[#1C1C1C] rounded-xl">
           <ImageIcon className="w-8 h-8 text-[#71717A] mx-auto mb-2" />
           <p className="text-xs font-semibold text-[#52525B] dark:text-[#A1A1AA]">No project images uploaded yet</p>
           <p className="text-[10px] text-[#71717A] mt-0.5">Click &quot;Upload Images&quot; above to select multiple photos.</p>

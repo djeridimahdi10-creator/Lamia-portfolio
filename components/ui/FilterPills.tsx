@@ -27,7 +27,7 @@ export function FilterPills({ options, active, onChange }: FilterPillsProps) {
             className={`relative px-5 py-2.5 rounded-full text-xs uppercase tracking-widest font-semibold transition-colors duration-250 cursor-pointer ${
               isActive
                 ? "text-white"
-                : "text-[#52525B] dark:text-[#A1A1AA] bg-white dark:bg-[#161616] border border-[#E4E4E7] dark:border-[#27272A] hover:border-[#C5A059] hover:text-[#C5A059]"
+                : "text-[#52525B] dark:text-[#A1A1AA] bg-white dark:bg-[#111111] border border-[#E4E4E7] dark:border-[#1C1C1C] hover:border-[#C5A059] hover:text-[#C5A059]"
             }`}
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}

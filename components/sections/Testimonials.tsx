@@ -37,7 +37,7 @@ export function Testimonials({ locale }: TestimonialsProps) {
   const testimonial = data.testimonials[current];
 
   return (
-    <section id="testimonials" className="relative py-28 lg:py-36 bg-[#FAF9F6] dark:bg-[#0F0F0F]">
+    <section id="testimonials" className="relative py-28 lg:py-36 bg-[#FAF9F6] dark:bg-[#0A0A0A]">
       {/* Subtle background decoration */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#C5A059]/[0.02] rounded-full blur-3xl" />
@@ -51,7 +51,7 @@ export function Testimonials({ locale }: TestimonialsProps) {
         {/* Carousel */}
         <div className="max-w-4xl mx-auto">
           <SectionReveal>
-            <div className="relative min-h-[360px] flex items-center p-8 lg:p-12 rounded-2xl bg-white dark:bg-[#161616] border border-[#E4E4E7] dark:border-[#27272A] shadow-xl">
+            <div className="relative min-h-[360px] flex items-center p-8 lg:p-12 rounded-2xl bg-white dark:bg-[#111111] border border-[#E4E4E7] dark:border-[#1C1C1C] shadow-xl">
               {/* Decorative quote mark */}
               <Quote className="w-16 h-16 text-[#C5A059]/10 absolute top-6 left-6" />
 
@@ -78,7 +78,7 @@ export function Testimonials({ locale }: TestimonialsProps) {
 
                   {/* Author Meta */}
                   <div className="flex flex-col items-center">
-                    <div className="w-14 h-14 rounded-full bg-[#FAF9F6] dark:bg-[#1A1A1A] border-2 border-[#C5A059] overflow-hidden flex items-center justify-center mb-3 shadow-md shadow-[#C5A059]/10">
+                    <div className="w-14 h-14 rounded-full bg-[#FAF9F6] dark:bg-[#141414] border-2 border-[#C5A059] overflow-hidden flex items-center justify-center mb-3 shadow-md shadow-[#C5A059]/10">
                       {testimonial.photo ? (
                         <img
                           src={testimonial.photo}
@@ -113,7 +113,7 @@ export function Testimonials({ locale }: TestimonialsProps) {
               <button
                 type="button"
                 onClick={() => paginate(-1)}
-                className="p-3 rounded-full bg-white dark:bg-[#161616] border border-[#E4E4E7] dark:border-[#27272A] text-[#52525B] dark:text-[#A1A1AA] hover:text-[#C5A059] hover:border-[#C5A059] transition-all duration-300 cursor-pointer shadow-sm"
+                className="p-3 rounded-full bg-white dark:bg-[#111111] border border-[#E4E4E7] dark:border-[#1C1C1C] text-[#52525B] dark:text-[#A1A1AA] hover:text-[#C5A059] hover:border-[#C5A059] transition-all duration-300 cursor-pointer shadow-sm"
                 aria-label="Previous testimonial"
               >
                 <ChevronLeft className="w-5 h-5" />
@@ -141,7 +141,7 @@ export function Testimonials({ locale }: TestimonialsProps) {
               <button
                 type="button"
                 onClick={() => paginate(1)}
-                className="p-3 rounded-full bg-white dark:bg-[#161616] border border-[#E4E4E7] dark:border-[#27272A] text-[#52525B] dark:text-[#A1A1AA] hover:text-[#C5A059] hover:border-[#C5A059] transition-all duration-300 cursor-pointer shadow-sm"
+                className="p-3 rounded-full bg-white dark:bg-[#111111] border border-[#E4E4E7] dark:border-[#1C1C1C] text-[#52525B] dark:text-[#A1A1AA] hover:text-[#C5A059] hover:border-[#C5A059] transition-all duration-300 cursor-pointer shadow-sm"
                 aria-label="Next testimonial"
               >
                 <ChevronRight className="w-5 h-5" />
