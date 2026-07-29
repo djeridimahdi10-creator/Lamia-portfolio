@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { usePathname, useRouter } from "next-intl/navigation";
+import { usePathname, useRouter } from "@/i18n/navigation";
 import { Menu, X, Globe, Lock } from "lucide-react";
 import { siteConfig } from "@/data/site-config";
 
