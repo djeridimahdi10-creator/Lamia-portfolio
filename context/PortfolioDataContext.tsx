@@ -1,6 +1,7 @@
 "use client";
 
 import React, { createContext, useContext, useState, useEffect } from "react";
+import { getPortfolioContentAction, savePortfolioContentAction } from "@/app/actions/portfolio";
 
 // Default data imports
 import { heroData as defaultHero } from "@/data/hero";
@@ -39,14 +40,16 @@ const defaultData: PortfolioData = {
 
 interface ContextType {
   data: PortfolioData;
-  updateData: (newData: PortfolioData) => void;
-  resetData: () => void;
+  updateData: (newData: PortfolioData) => Promise<void>;
+  resetData: () => Promise<void>;
+  isLoading: boolean;
 }
 
 const PortfolioDataContext = createContext<ContextType>({
   data: defaultData,
-  updateData: () => { },
-  resetData: () => { },
+  updateData: async () => {},
+  resetData: async () => {},
+  isLoading: false,
 });
 
 function mergePortfolioData(parsed: Record<string, any>): PortfolioData {
@@ -64,69 +67,62 @@ function mergePortfolioData(parsed: Record<string, any>): PortfolioData {
 }
 
 export function PortfolioDataProvider({ children }: { children: React.ReactNode }) {
-  // Lazy initializer reads from localStorage on first render, avoiding setState-in-effect
   const [data, setData] = useState<PortfolioData>(() => {
     if (typeof window === "undefined") return defaultData;
     try {
       const saved = localStorage.getItem("portfolio_data");
       if (saved) {
-        const parsed = JSON.parse(saved);
-        return mergePortfolioData(parsed);
+        return mergePortfolioData(JSON.parse(saved));
       }
-    } catch (err) {
-      console.error("Failed to parse saved portfolio data", err);
-    }
+    } catch {}
     return defaultData;
   });
+  const [isLoading, setIsLoading] = useState<boolean>(true);
 
+  // Fetch live Supabase data on mount
   useEffect(() => {
-    // Listen for storage events from other tabs
-    const handleStorageChange = (e: StorageEvent) => {
-      if (e.key === "portfolio_data" && e.newValue) {
-        try {
-          const parsed = JSON.parse(e.newValue);
-          setData(mergePortfolioData(parsed));
-        } catch { }
+    async function loadCloudData() {
+      try {
+        const res = await getPortfolioContentAction();
+        if (res.success && res.data) {
+          const merged = mergePortfolioData(res.data);
+          setData(merged);
+          if (typeof window !== "undefined") {
+            localStorage.setItem("portfolio_data", JSON.stringify(merged));
+          }
+        }
+      } catch (err) {
+        console.warn("Could not load cloud portfolio data:", err);
+      } finally {
+        setIsLoading(false);
       }
-    };
+    }
 
-    window.addEventListener("storage", handleStorageChange);
-    return () => window.removeEventListener("storage", handleStorageChange);
+    loadCloudData();
   }, []);
 
-  const updateData = (newData: PortfolioData) => {
+  const updateData = async (newData: PortfolioData) => {
     setData(newData);
-    localStorage.setItem("portfolio_data", JSON.stringify(newData));
-    // Trigger custom event for same-window updates
-    window.dispatchEvent(new Event("portfolio_data_updated"));
+    if (typeof window !== "undefined") {
+      localStorage.setItem("portfolio_data", JSON.stringify(newData));
+      window.dispatchEvent(new Event("portfolio_data_updated"));
+    }
+    // Save to Supabase Cloud
+    await savePortfolioContentAction(newData);
   };
 
-  const resetData = () => {
+  const resetData = async () => {
     setData(defaultData);
-    localStorage.removeItem("portfolio_data");
-    window.dispatchEvent(new Event("portfolio_data_updated"));
+    if (typeof window !== "undefined") {
+      localStorage.removeItem("portfolio_data");
+      window.dispatchEvent(new Event("portfolio_data_updated"));
+    }
+    // Reset on Supabase Cloud
+    await savePortfolioContentAction(defaultData);
   };
-
-  // Custom event listener for same window tab updates
-  useEffect(() => {
-    const handleCustomEvent = () => {
-      const saved = localStorage.getItem("portfolio_data");
-      if (saved) {
-        try {
-          const parsed = JSON.parse(saved);
-          setData(mergePortfolioData(parsed));
-        } catch { }
-      } else {
-        setData(defaultData);
-      }
-    };
-
-    window.addEventListener("portfolio_data_updated", handleCustomEvent);
-    return () => window.removeEventListener("portfolio_data_updated", handleCustomEvent);
-  }, []);
 
   return (
-    <PortfolioDataContext.Provider value={{ data, updateData, resetData }}>
+    <PortfolioDataContext.Provider value={{ data, updateData, resetData, isLoading }}>
       {children}
     </PortfolioDataContext.Provider>
   );
