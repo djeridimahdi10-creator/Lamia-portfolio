@@ -40,14 +40,14 @@ const defaultData: PortfolioData = {
 
 interface ContextType {
   data: PortfolioData;
-  updateData: (newData: PortfolioData) => Promise<void>;
+  updateData: (newData: PortfolioData) => Promise<{ success: boolean; error?: string }>;
   resetData: () => Promise<void>;
   isLoading: boolean;
 }
 
 const PortfolioDataContext = createContext<ContextType>({
   data: defaultData,
-  updateData: async () => {},
+  updateData: async () => ({ success: true }),
   resetData: async () => {},
   isLoading: false,
 });
@@ -108,7 +108,8 @@ export function PortfolioDataProvider({ children }: { children: React.ReactNode 
       window.dispatchEvent(new Event("portfolio_data_updated"));
     }
     // Save to Supabase Cloud
-    await savePortfolioContentAction(newData);
+    const res = await savePortfolioContentAction(newData);
+    return res;
   };
 
   const resetData = async () => {

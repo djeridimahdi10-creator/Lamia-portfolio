@@ -149,10 +149,14 @@ export default function AdminPage() {
     addToast("Logged out of Studio Admin", "info");
   };
 
-  const saveToLocalStorage = useCallback(() => {
-    updateData(data as any);
+  const saveToLocalStorage = useCallback(async () => {
+    const res = await updateData(data as any);
     setSaved(true);
-    addToast(t("saved"), "success");
+    if (res && res.error) {
+      addToast(`Cloud save notice: ${res.error}`, "error");
+    } else {
+      addToast(t("saved"), "success");
+    }
     setTimeout(() => setSaved(false), 2000);
   }, [data, updateData, t]);
 
