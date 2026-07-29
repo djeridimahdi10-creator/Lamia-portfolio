@@ -5,8 +5,10 @@ export default createMiddleware(routing);
 
 export const config = {
   matcher: [
-    // Match all pathnames except static files / api
-    "/((?!api|_next|_vercel|.*\\..*).*)",
+    // Match root / and locale prefixes
     "/",
+    "/(fr|en)/:path*",
+    // Match all pathnames except static files / api
+    "/((?!_next|_vercel|.*\\..*).*)"
   ],
 };
