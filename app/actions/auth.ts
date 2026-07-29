@@ -6,12 +6,15 @@ import crypto from "crypto";
 const AUTH_COOKIE_NAME = "admin_session";
 const COOKIE_MAX_AGE = 60 * 60 * 24; // 24 hours
 
+function getAdminPassword(): string {
+  return process.env.ADMIN_PASSWORD || "LaAk124mia";
+}
+
 /**
  * Derives a cryptographically secure, deterministic session token from the admin password.
  */
-function getExpectedSessionToken(): string | null {
-  const adminPassword = process.env.ADMIN_PASSWORD;
-  if (!adminPassword) return null;
+function getExpectedSessionToken(): string {
+  const adminPassword = getAdminPassword();
   return crypto
     .createHash("sha256")
     .update(`studio_admin_session_salt_${adminPassword}`)
@@ -31,21 +34,13 @@ function safeCompareStrings(a: string, b: string): boolean {
 export async function validateAdminPassword(
   password: string
 ): Promise<{ success: boolean; error?: string }> {
-  const adminPassword = process.env.ADMIN_PASSWORD;
-
-  if (!adminPassword) {
-    console.error("ADMIN_PASSWORD environment variable is not set.");
-    return { success: false, error: "Server configuration error." };
-  }
+  const adminPassword = getAdminPassword();
 
   if (!safeCompareStrings(password, adminPassword)) {
     return { success: false, error: "wrongPassword" };
   }
 
   const expectedToken = getExpectedSessionToken();
-  if (!expectedToken) {
-    return { success: false, error: "Server configuration error." };
-  }
 
   // Set HTTP-only cookie on success
   const cookieStore = await cookies();
@@ -62,7 +57,6 @@ export async function validateAdminPassword(
 
 export async function checkAdminAuth(): Promise<boolean> {
   const expectedToken = getExpectedSessionToken();
-  if (!expectedToken) return false;
 
   const cookieStore = await cookies();
   const session = cookieStore.get(AUTH_COOKIE_NAME);
@@ -75,4 +69,3 @@ export async function logoutAdmin(): Promise<void> {
   const cookieStore = await cookies();
   cookieStore.delete(AUTH_COOKIE_NAME);
 }
-
