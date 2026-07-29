@@ -1,7 +1,6 @@
 "use server";
 
 import { getSupabaseClient } from "@/lib/supabaseClient";
-import { revalidatePath } from "next/cache";
 
 export async function getPortfolioContentAction() {
   const client = getSupabaseClient();
@@ -43,12 +42,6 @@ export async function savePortfolioContentAction(portfolioData: any) {
       console.error("Supabase error during save:", error.message);
       return { success: false, error: error.message };
     }
-
-    revalidatePath("/", "layout");
-    revalidatePath("/[locale]", "layout");
-    revalidatePath("/");
-    revalidatePath("/en");
-    revalidatePath("/fr");
 
     return { success: true };
   } catch (err: any) {

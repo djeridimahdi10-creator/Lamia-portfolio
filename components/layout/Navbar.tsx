@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { useRouter, usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next-intl/navigation";
 import { Menu, X, Globe, Lock } from "lucide-react";
 import { siteConfig } from "@/data/site-config";
 
@@ -65,22 +65,8 @@ export function Navbar({ locale }: NavbarProps) {
 
   const switchLocale = () => {
     const targetLocale = locale === "fr" ? "en" : "fr";
-    if (targetLocale === "en") {
-      if (pathname?.startsWith("/fr")) {
-        router.push(pathname.replace("/fr", "/en"));
-      } else if (!pathname || pathname === "/") {
-        router.push("/en");
-      } else if (!pathname.startsWith("/en")) {
-        router.push(`/en${pathname}`);
-      }
-    } else {
-      if (pathname?.startsWith("/en")) {
-        const newPath = pathname.replace("/en", "") || "/";
-        router.push(newPath);
-      } else {
-        router.push("/");
-      }
-    }
+    const pathWithoutLocale = pathname?.replace(/^\/(fr|en)/, "") || "/";
+    router.push(pathWithoutLocale, { locale: targetLocale });
   };
 
   const navLinks = siteConfig.navItems;
