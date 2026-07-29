@@ -9,14 +9,12 @@ import { Footer } from "@/components/layout/Footer";
 import { PortfolioDataProvider } from "@/context/PortfolioDataContext";
 import type { Metadata } from "next";
 
+export const dynamic = "force-dynamic";
+
 type Props = {
   children: React.ReactNode;
   params: Promise<{ locale: string }>;
 };
-
-export async function generateStaticParams() {
-  return routing.locales.map((locale) => ({ locale }));
-}
 
 export async function generateMetadata({
   params,

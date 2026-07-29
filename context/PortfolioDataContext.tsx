@@ -67,19 +67,9 @@ function mergePortfolioData(parsed: Record<string, any>): PortfolioData {
 }
 
 export function PortfolioDataProvider({ children }: { children: React.ReactNode }) {
-  const [data, setData] = useState<PortfolioData>(() => {
-    if (typeof window === "undefined") return defaultData;
-    try {
-      const saved = localStorage.getItem("portfolio_data");
-      if (saved) {
-        return mergePortfolioData(JSON.parse(saved));
-      }
-    } catch {}
-    return defaultData;
-  });
+  const [data, setData] = useState<PortfolioData>(defaultData);
   const [isLoading, setIsLoading] = useState<boolean>(true);
 
-  // Fetch live Supabase data on mount
   useEffect(() => {
     async function loadCloudData() {
       try {
@@ -90,9 +80,20 @@ export function PortfolioDataProvider({ children }: { children: React.ReactNode 
           if (typeof window !== "undefined") {
             localStorage.setItem("portfolio_data", JSON.stringify(merged));
           }
+        } else {
+          const saved = localStorage.getItem("portfolio_data");
+          if (saved) {
+            setData(mergePortfolioData(JSON.parse(saved)));
+          }
         }
       } catch (err) {
         console.warn("Could not load cloud portfolio data:", err);
+        try {
+          const saved = localStorage.getItem("portfolio_data");
+          if (saved) {
+            setData(mergePortfolioData(JSON.parse(saved)));
+          }
+        } catch {}
       } finally {
         setIsLoading(false);
       }

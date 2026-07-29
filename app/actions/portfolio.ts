@@ -44,9 +44,11 @@ export async function savePortfolioContentAction(portfolioData: any) {
       return { success: false, error: error.message };
     }
 
-    // Instantly invalidate Vercel CDN cache so all visitors and mobile devices see the updated data!
     revalidatePath("/", "layout");
     revalidatePath("/[locale]", "layout");
+    revalidatePath("/");
+    revalidatePath("/en");
+    revalidatePath("/fr");
 
     return { success: true };
   } catch (err: any) {
