@@ -105,7 +105,7 @@ export function Experience({ locale }: ExperienceProps) {
                           {getLocalizedText(entry.description, locale)}
                         </p>
                         <p className={`mt-3 text-[11px] text-[#71717A] flex items-center gap-1 font-mono ${isLeft ? "md:justify-end" : "md:justify-start"}`}>
-                          <MapPin className="w-3 h-3 text-[#C5A059]" />
+                          <MapPin className="w-3.5 h-3.5 text-[#C5A059]" />
                           {getLocalizedText(entry.location, locale)}
                         </p>
                       </motion.div>

@@ -9,8 +9,10 @@ import {
   Home, User, Wrench, FolderOpen, Briefcase,
   MessageSquare, BookOpen, Mail, FileText,
   Plus, Trash2, RefreshCw, Edit3, AlertTriangle, Eye, Sparkles,
-  LayoutDashboard, GraduationCap, BarChart3, EyeOff, MoreHorizontal
+  LayoutDashboard, GraduationCap, BarChart3, EyeOff, MoreHorizontal,
+  Sun, Moon
 } from "lucide-react";
+import { useTheme } from "next-themes";
 
 import { heroData as defaultHero } from "@/data/hero";
 import { aboutData as defaultAbout } from "@/data/about";
@@ -70,6 +72,7 @@ export default function AdminPage() {
   const t = useTranslations("admin");
   const currentLocale = useLocale();
   const { data: contextData, updateData, resetData } = usePortfolioData();
+  const { theme, setTheme } = useTheme();
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [isCheckingAuth, setIsCheckingAuth] = useState(true);
   const [password, setPassword] = useState("");
@@ -470,6 +473,16 @@ export default function AdminPage() {
               title={t("resetDefaults")}
             >
               <RefreshCw className="w-4.5 h-4.5" />
+            </button>
+
+            <button
+              type="button"
+              onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+              className="flex items-center gap-1.5 px-3 py-2 text-xs font-semibold text-[#71717A] dark:text-[#A1A1AA] hover:text-[#C5A059] hover:bg-[#C5A059]/10 rounded-lg transition-colors cursor-pointer"
+              title={theme === "dark" ? "Switch to light mode" : "Switch to dark mode"}
+            >
+              {theme === "dark" ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
+              <span className="hidden sm:inline">{theme === "dark" ? "Light" : "Dark"}</span>
             </button>
 
             <button

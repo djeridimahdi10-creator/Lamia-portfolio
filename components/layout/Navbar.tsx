@@ -3,7 +3,8 @@
 import { useState, useEffect, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { usePathname, useRouter } from "@/i18n/navigation";
-import { Menu, X, Globe, Lock } from "lucide-react";
+import { Menu, X, Globe, Lock, Sun, Moon } from "lucide-react";
+import { useTheme } from "next-themes";
 import { siteConfig } from "@/data/site-config";
 
 interface NavbarProps {
@@ -17,6 +18,7 @@ export function Navbar({ locale }: NavbarProps) {
   const [activeSection, setActiveSection] = useState("hero");
   const router = useRouter();
   const pathname = usePathname();
+  const { theme, setTheme } = useTheme();
 
   useEffect(() => {
     setMounted(true);
@@ -68,6 +70,12 @@ export function Navbar({ locale }: NavbarProps) {
     const pathWithoutLocale = pathname?.replace(/^\/(fr|en)/, "") || "/";
     router.push(pathWithoutLocale, { locale: targetLocale });
   };
+
+  const toggleTheme = () => {
+    setTheme(theme === "dark" ? "light" : "dark");
+  };
+
+  const isDark = theme === "dark";
 
   const navLinks = siteConfig.navItems;
 
@@ -152,10 +160,41 @@ export function Navbar({ locale }: NavbarProps) {
               <span>Admin</span>
             </a>
 
+            {/* Theme Toggle */}
+            <button
+              onClick={toggleTheme}
+              className="relative flex items-center justify-center w-9 h-9 rounded-xl bg-black/[0.03] dark:bg-white/[0.03] border border-[#E4E4E7]/40 dark:border-[#27272A]/40 hover:border-[#C5A059]/50 hover:bg-[#C5A059]/5 transition-all duration-300 cursor-pointer overflow-hidden"
+              aria-label={isDark ? "Switch to light mode" : "Switch to dark mode"}
+            >
+              <AnimatePresence mode="wait" initial={false}>
+                {isDark ? (
+                  <motion.div
+                    key="sun"
+                    initial={{ rotate: -90, scale: 0, opacity: 0 }}
+                    animate={{ rotate: 0, scale: 1, opacity: 1 }}
+                    exit={{ rotate: 90, scale: 0, opacity: 0 }}
+                    transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
+                  >
+                    <Sun className="w-4 h-4 text-[#C5A059]" />
+                  </motion.div>
+                ) : (
+                  <motion.div
+                    key="moon"
+                    initial={{ rotate: 90, scale: 0, opacity: 0 }}
+                    animate={{ rotate: 0, scale: 1, opacity: 1 }}
+                    exit={{ rotate: -90, scale: 0, opacity: 0 }}
+                    transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
+                  >
+                    <Moon className="w-4 h-4 text-[#C5A059]" />
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </button>
+
             {/* Language Switch */}
             <button
               onClick={switchLocale}
-              className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-[10px] font-bold text-[#A1A1AA] hover:text-[#EDEDEF] bg-white/[0.03] hover:bg-white/[0.06] transition-colors duration-300 cursor-pointer border border-[#27272A]/40"
+              className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-[10px] font-bold text-[#71717A] dark:text-[#A1A1AA] hover:text-[#0A0A0A] dark:hover:text-[#EDEDEF] bg-black/[0.03] dark:bg-white/[0.03] hover:bg-black/[0.06] dark:hover:bg-white/[0.06] transition-colors duration-300 cursor-pointer border border-[#E4E4E7]/40 dark:border-[#27272A]/40"
               aria-label="Switch language"
             >
               <Globe className="w-3.5 h-3.5 text-[#C5A059]" />
@@ -211,7 +250,38 @@ export function Navbar({ locale }: NavbarProps) {
               })}
             </div>
 
-            <div className="flex items-center justify-center gap-4 pt-6 border-t border-[#E4E4E7] dark:border-[#27272A]">
+            <div className="flex items-center justify-center gap-3 pt-6 border-t border-[#E4E4E7] dark:border-[#27272A]">
+              {/* Mobile Theme Toggle */}
+              <button
+                onClick={toggleTheme}
+                className="p-3 rounded-xl text-[#71717A] dark:text-[#A1A1AA] hover:text-[#C5A059] bg-white dark:bg-[#161616] border border-[#E4E4E7] dark:border-[#27272A] transition-all duration-300 cursor-pointer"
+                aria-label={isDark ? "Switch to light mode" : "Switch to dark mode"}
+              >
+                <AnimatePresence mode="wait" initial={false}>
+                  {isDark ? (
+                    <motion.div
+                      key="sun-mobile"
+                      initial={{ rotate: -90, scale: 0 }}
+                      animate={{ rotate: 0, scale: 1 }}
+                      exit={{ rotate: 90, scale: 0 }}
+                      transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
+                    >
+                      <Sun className="w-5 h-5" />
+                    </motion.div>
+                  ) : (
+                    <motion.div
+                      key="moon-mobile"
+                      initial={{ rotate: 90, scale: 0 }}
+                      animate={{ rotate: 0, scale: 1 }}
+                      exit={{ rotate: -90, scale: 0 }}
+                      transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
+                    >
+                      <Moon className="w-5 h-5" />
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </button>
+
               <a
                 href={`/${locale}/admin`}
                 className="flex items-center gap-2 px-5 py-2.5 rounded-xl text-[10px] font-bold uppercase tracking-[0.15em] text-white bg-[#C5A059] shadow-lg shadow-[#C5A059]/20"

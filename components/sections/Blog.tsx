@@ -186,11 +186,11 @@ export function Blog({ locale }: BlogProps) {
                     </span>
                     <span>·</span>
                     <span className="flex items-center gap-1">
-                      <Calendar className="w-3.5 h-3.5" /> {openPost.date}
+                      <Calendar className="w-3.5 h-3.5 text-[#C5A059]" /> {openPost.date}
                     </span>
                     <span>·</span>
                     <span className="flex items-center gap-1">
-                      <Clock className="w-3.5 h-3.5" /> {openPost.readingTime} min read
+                      <Clock className="w-3.5 h-3.5 text-[#C5A059]" /> {openPost.readingTime} min read
                     </span>
                   </div>
 

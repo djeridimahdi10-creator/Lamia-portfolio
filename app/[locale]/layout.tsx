@@ -72,9 +72,8 @@ export default async function LocaleLayout({ children, params }: Props) {
     <ThemeProvider
       attribute="class"
       defaultTheme="dark"
-      forcedTheme="dark"
-      enableSystem={false}
-      disableTransitionOnChange
+      enableSystem
+      disableTransitionOnChange={false}
     >
       <NextIntlClientProvider messages={messages}>
         <PortfolioDataProvider>

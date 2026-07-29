@@ -3,6 +3,7 @@
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import Image from "next/image";
+import { GraduationCap, BarChart3, Quote } from "lucide-react";
 import { usePortfolioData } from "@/context/PortfolioDataContext";
 import { getLocalizedText, getLocalizedArray } from "@/lib/utils";
 import { SectionReveal } from "@/components/animations/SectionReveal";
@@ -76,7 +77,8 @@ export function About({ locale }: AboutProps) {
             {/* Philosophy Quote */}
             <SectionReveal delay={0.4}>
               <blockquote className="mt-8 p-6 rounded-2xl bg-[#FAF9F6] dark:bg-[#161616] border border-[#E4E4E7] dark:border-[#27272A] border-l-4 border-l-[#C5A059] shadow-sm relative">
-                <div className="absolute top-4 right-4 text-5xl font-playfair text-[#C5A059]/10 leading-none select-none">&ldquo;</div>
+                <Quote className="w-8 h-8 text-[#C5A059]/15 absolute top-4 right-4" />
+                <div className="absolute top-4 right-14 text-5xl font-playfair text-[#C5A059]/10 leading-none select-none">&ldquo;</div>
                 <p className="font-playfair text-lg md:text-xl italic text-[#52525B] dark:text-[#A1A1AA] leading-relaxed relative z-10">
                   {getLocalizedText(data.philosophy, locale)}
                 </p>
@@ -102,7 +104,8 @@ export function About({ locale }: AboutProps) {
         {/* Education Timeline */}
         <div className="mt-24">
           <SectionReveal>
-            <h3 className="font-playfair text-2xl md:text-3xl font-bold text-[#0A0A0A] dark:text-[#EDEDEF] text-center mb-14">
+            <h3 className="font-playfair text-2xl md:text-3xl font-bold text-[#0A0A0A] dark:text-[#EDEDEF] text-center mb-14 flex items-center justify-center gap-3">
+              <GraduationCap className="w-7 h-7 text-[#C5A059]" />
               {locale === "fr" ? "Formation & Diplômes" : "Education & Credentials"}
             </h3>
           </SectionReveal>
