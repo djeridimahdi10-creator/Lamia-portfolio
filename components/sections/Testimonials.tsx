@@ -37,7 +37,7 @@ export function Testimonials({ locale }: TestimonialsProps) {
   const testimonial = data.testimonials[current];
 
   return (
-    <section id="testimonials" className="relative py-28 lg:py-36 bg-[#FAF9F6] dark:bg-[#0A0A0A]">
+    <section id="testimonials" className="relative py-28 lg:py-36 bg-[#FAF9F6] dark:bg-[#0B0B0C]">
       {/* Subtle background decoration */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#C5A059]/[0.02] rounded-full blur-3xl" />
@@ -51,7 +51,7 @@ export function Testimonials({ locale }: TestimonialsProps) {
         {/* Carousel */}
         <div className="max-w-4xl mx-auto">
           <SectionReveal>
-            <div className="relative min-h-[360px] flex items-center p-8 lg:p-12 rounded-2xl bg-white dark:bg-[#111111] border border-[#E4E4E7] dark:border-[#1C1C1C] shadow-xl">
+            <div className="relative min-h-[360px] flex items-center p-8 lg:p-12 rounded-2xl bg-white dark:bg-[#121214] border border-[#E4E4E7] dark:border-[#1F1F24] shadow-xl">
               {/* Decorative quote mark */}
               <Quote className="w-16 h-16 text-[#C5A059]/10 absolute top-6 left-6" />
 

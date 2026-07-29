@@ -37,7 +37,7 @@ export function Experience({ locale }: ExperienceProps) {
   ];
 
   return (
-    <section id="experience" className="relative py-28 lg:py-36 bg-white dark:bg-[#0A0A0A]">
+    <section id="experience" className="relative py-28 lg:py-36 bg-white dark:bg-[#0B0B0C]">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <SectionHeader
           title={getLocalizedText(data.sectionTitle, locale)}
@@ -74,7 +74,7 @@ export function Experience({ locale }: ExperienceProps) {
                     {/* Content Card */}
                     <div className={`flex-1 ml-12 md:ml-0 ${isLeft ? "md:pr-10 md:text-right" : "md:pl-10 md:text-left"}`}>
                       <motion.div
-                        className="p-6 rounded-2xl bg-white dark:bg-[#111111] border border-[#E4E4E7] dark:border-[#1C1C1C] hover:border-[#C5A059]/40 transition-all duration-300 shadow-sm hover:shadow-md group"
+                        className="p-6 rounded-2xl bg-white dark:bg-[#121214] border border-[#E4E4E7] dark:border-[#1F1F24] hover:border-[#C5A059]/40 transition-all duration-300 shadow-sm hover:shadow-md group"
                         whileHover={{ y: -3 }}
                       >
                         {/* Date & Type Badge */}
@@ -113,7 +113,7 @@ export function Experience({ locale }: ExperienceProps) {
 
                     {/* Timeline Dot */}
                     <div className="absolute left-6 md:left-1/2 md:-translate-x-1/2 flex items-center justify-center w-4 h-4 mt-8">
-                      <div className="w-4 h-4 rounded-full bg-[#C5A059] ring-4 ring-white dark:ring-[#0F0F0F] z-10 shadow-sm" />
+                      <div className="w-4 h-4 rounded-full bg-[#C5A059] ring-4 ring-white dark:ring-[#0B0B0C] z-10 shadow-sm" />
                     </div>
 
                     <div className="flex-1 hidden md:block" />

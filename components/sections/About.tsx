@@ -41,7 +41,7 @@ export function About({ locale }: AboutProps) {
   const bioParagraphs = getLocalizedArray(data.biography, locale);
 
   return (
-    <section id="about" className="relative py-28 lg:py-36 bg-white dark:bg-[#0A0A0A]">
+    <section id="about" className="relative py-28 lg:py-36 bg-white dark:bg-[#0B0B0C]">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <SectionHeader
           title={getLocalizedText(data.sectionTitle, locale)}
@@ -51,7 +51,7 @@ export function About({ locale }: AboutProps) {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 mb-24 items-center">
           {/* Photo Side */}
           <SectionReveal direction="left" className="lg:col-span-5 relative">
-            <div className="relative aspect-[3/4] bg-white dark:bg-[#111111] rounded-2xl overflow-hidden shadow-xl border border-[#E4E4E7] dark:border-[#1C1C1C] group corner-accents">
+            <div className="relative aspect-[3/4] bg-white dark:bg-[#121214] rounded-2xl overflow-hidden shadow-xl border border-[#E4E4E7] dark:border-[#1F1F24] group corner-accents">
               <Image
                 src={data.photo}
                 alt="Lamia Akoubache"
@@ -68,7 +68,7 @@ export function About({ locale }: AboutProps) {
           <div className="lg:col-span-7 flex flex-col justify-center">
             {bioParagraphs.map((paragraph, index) => (
               <SectionReveal key={index} delay={index * 0.12}>
-                <p className="text-base md:text-lg text-[#0A0A0A]/80 dark:text-[#EDEDEF]/80 leading-relaxed mb-6 last:mb-0 font-normal">
+                <p className="text-base md:text-lg text-[#0A0A0A]/80 dark:text-[#EDEDEF]/90 leading-relaxed mb-6 last:mb-0 font-normal">
                   {paragraph}
                 </p>
               </SectionReveal>
@@ -76,7 +76,7 @@ export function About({ locale }: AboutProps) {
 
             {/* Philosophy Quote */}
             <SectionReveal delay={0.4}>
-              <blockquote className="mt-8 p-6 rounded-2xl bg-[#FAF9F6] dark:bg-[#111111] border border-[#E4E4E7] dark:border-[#1C1C1C] border-l-4 border-l-[#C5A059] shadow-sm relative">
+              <blockquote className="mt-8 p-6 rounded-2xl bg-[#FAF9F6] dark:bg-[#121214] border border-[#E4E4E7] dark:border-[#1F1F24] border-l-4 border-l-[#C5A059] shadow-sm relative">
                 <Quote className="w-8 h-8 text-[#C5A059]/15 absolute top-4 right-4" />
                 <div className="absolute top-4 right-14 text-5xl font-playfair text-[#C5A059]/10 leading-none select-none">&ldquo;</div>
                 <p className="font-playfair text-lg md:text-xl italic text-[#52525B] dark:text-[#A1A1AA] leading-relaxed relative z-10">
@@ -89,9 +89,9 @@ export function About({ locale }: AboutProps) {
 
         {/* Statistics */}
         <SectionReveal>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-0 py-12 rounded-2xl bg-[#FAF9F6] dark:bg-[#111111] border border-[#E4E4E7] dark:border-[#1C1C1C] shadow-sm overflow-hidden">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-0 py-12 rounded-2xl bg-[#FAF9F6] dark:bg-[#121214] border border-[#E4E4E7] dark:border-[#1F1F24] shadow-sm overflow-hidden">
             {data.statistics.map((stat, i) => (
-              <div key={i} className={`${i > 0 ? "border-l border-[#E4E4E7] dark:border-[#1C1C1C]" : ""}`}>
+              <div key={i} className={`${i > 0 ? "border-l border-[#E4E4E7] dark:border-[#1F1F24]" : ""}`}>
                 <AnimatedCounter
                   value={stat.value}
                   label={getLocalizedText(stat.label, locale)}
@@ -117,7 +117,7 @@ export function About({ locale }: AboutProps) {
               <SectionReveal key={index} delay={index * 0.12}>
                 <div className={`flex flex-col md:flex-row items-center gap-8 mb-10 ${index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"}`}>
                   <div className={`flex-1 ${index % 2 === 0 ? "md:text-right" : "md:text-left"}`}>
-                    <div className="bg-white dark:bg-[#111111] p-6 rounded-2xl border border-[#E4E4E7] dark:border-[#1C1C1C] shadow-sm hover:border-[#C5A059]/40 hover:shadow-md transition-all duration-300 group">
+                    <div className="bg-white dark:bg-[#121214] p-6 rounded-2xl border border-[#E4E4E7] dark:border-[#1F1F24] shadow-sm hover:border-[#C5A059]/40 hover:shadow-md transition-all duration-300 group">
                       <p className="text-[10px] text-[#C5A059] uppercase tracking-[0.2em] font-bold mb-2">
                         {edu.year}
                       </p>
@@ -133,7 +133,7 @@ export function About({ locale }: AboutProps) {
                     </div>
                   </div>
 
-                  <div className="hidden md:flex items-center justify-center w-4 h-4 rounded-full bg-[#C5A059] ring-4 ring-white dark:ring-[#0F0F0F] z-10 shadow-sm" />
+                  <div className="hidden md:flex items-center justify-center w-4 h-4 rounded-full bg-[#C5A059] ring-4 ring-white dark:ring-[#0B0B0C] z-10 shadow-sm" />
 
                   <div className="flex-1 hidden md:block" />
                 </div>

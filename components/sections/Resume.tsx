@@ -23,7 +23,7 @@ export function Resume({ locale }: ResumeProps) {
   ];
 
   return (
-    <section id="resume" className="relative py-28 lg:py-36 bg-white dark:bg-[#0A0A0A] overflow-hidden">
+    <section id="resume" className="relative py-28 lg:py-36 bg-white dark:bg-[#0B0B0C] overflow-hidden">
       <div className="max-w-4xl mx-auto px-6 lg:px-8 relative z-10">
         <SectionHeader
           title={getLocalizedText(data.sectionTitle, locale)}
@@ -32,7 +32,7 @@ export function Resume({ locale }: ResumeProps) {
 
         {/* Executive Resume Card */}
         <SectionReveal>
-          <div className="relative bg-[#FAF9F6] dark:bg-[#111111] border border-[#E4E4E7] dark:border-[#1C1C1C] p-8 sm:p-12 md:p-16 text-center shadow-xl overflow-hidden corner-accents">
+          <div className="relative bg-[#FAF9F6] dark:bg-[#121214] border border-[#E4E4E7] dark:border-[#1F1F24] p-8 sm:p-12 md:p-16 text-center shadow-xl overflow-hidden corner-accents">
             {/* Icon */}
             <div className="flex justify-center mb-6">
               <div className="p-5 bg-[#C5A059]/10 text-[#C5A059] rounded-full">

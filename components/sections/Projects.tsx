@@ -35,7 +35,7 @@ function ProjectCard({
       animate={{ opacity: 1, y: 0, scale: 1 }}
       exit={{ opacity: 0, scale: 0.95 }}
       transition={{ duration: 0.4, delay: index * 0.05 }}
-      className={`group relative overflow-hidden cursor-pointer rounded-2xl bg-white dark:bg-[#111111] border border-[#E4E4E7] dark:border-[#1C1C1C] hover:border-[#C5A059]/60 shadow-card hover:shadow-card-hover transition-all duration-350 ${
+      className={`group relative overflow-hidden cursor-pointer rounded-2xl bg-white dark:bg-[#121214] border border-[#E4E4E7] dark:border-[#1F1F24] hover:border-[#C5A059]/60 shadow-card hover:shadow-card-hover transition-all duration-350 ${
         project.featured ? "md:col-span-2 md:row-span-2" : ""
       }`}
       onMouseEnter={() => setIsHovered(true)}
@@ -188,7 +188,7 @@ export function Projects({ locale }: ProjectsProps) {
   ];
 
   return (
-    <section id="projects" className="relative py-28 lg:py-36 bg-[#FAF9F6] dark:bg-[#0A0A0A]">
+    <section id="projects" className="relative py-28 lg:py-36 bg-[#FAF9F6] dark:bg-[#0B0B0C]">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <SectionHeader
           title={getLocalizedText(data.sectionTitle, locale)}
@@ -230,7 +230,7 @@ export function Projects({ locale }: ProjectsProps) {
             <button
               type="button"
               onClick={() => setVisibleCount((prev) => prev + 6)}
-              className="btn-primary cursor-pointer"
+              className="btn-primary cursor-pointer font-bold shadow-lg shadow-[#C5A059]/20 dark:bg-gradient-to-r dark:from-[#DFBF7B] dark:via-[#C5A059] dark:to-[#A8833D] dark:text-[#0A0A0B]"
             >
               <span>{locale === "fr" ? "Voir Plus de Projets" : "Load More Projects"}</span>
               <ChevronDown className="w-4 h-4" />
@@ -243,7 +243,7 @@ export function Projects({ locale }: ProjectsProps) {
       <AnimatePresence>
         {selectedProject && (
           <div
-            className="fixed inset-0 z-50 flex items-center justify-center p-4 md:p-8 bg-[#0A0A0A]/85 backdrop-blur-md overflow-y-auto"
+            className="fixed inset-0 z-50 flex items-center justify-center p-4 md:p-8 bg-[#0B0B0C]/85 backdrop-blur-md overflow-y-auto"
             onClick={() => setSelectedProjectId(null)}
           >
             <motion.div
@@ -251,13 +251,13 @@ export function Projects({ locale }: ProjectsProps) {
               animate={{ y: 0, opacity: 1 }}
               exit={{ y: 30, opacity: 0 }}
               transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
-              className="relative w-full max-w-4xl bg-white dark:bg-[#111111] border border-[#E4E4E7] dark:border-[#1C1C1C] rounded-2xl shadow-2xl overflow-hidden my-auto flex flex-col max-h-[90vh]"
+              className="relative w-full max-w-4xl bg-white dark:bg-[#121214] border border-[#E4E4E7] dark:border-[#1F1F24] rounded-2xl shadow-2xl overflow-hidden my-auto flex flex-col max-h-[90vh]"
               onClick={(e) => e.stopPropagation()}
             >
               {/* Close Button */}
               <button
                 onClick={() => setSelectedProjectId(null)}
-                className="absolute top-5 right-5 z-30 p-2.5 rounded-full bg-white/80 dark:bg-[#111111]/80 backdrop-blur-md text-[#0A0A0A] dark:text-[#EDEDEF] hover:text-[#C5A059] shadow-lg cursor-pointer transition-colors duration-300"
+                className="absolute top-5 right-5 z-30 p-2.5 rounded-full bg-white/80 dark:bg-[#121214]/80 backdrop-blur-md text-[#0A0A0A] dark:text-[#EDEDEF] hover:text-[#C5A059] shadow-lg cursor-pointer transition-colors duration-300"
                 aria-label="Close project modal"
               >
                 <X className="w-5 h-5" />

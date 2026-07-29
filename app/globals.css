@@ -1,5 +1,7 @@
 @import "tailwindcss";
 
+@variant dark (&:where(.dark, .dark *));
+
 /* ================================================================
    PREMIUM ARCHITECTURE & ADMIN DESIGN SYSTEM
    Inspired by Vercel, Linear, Framer, Apple, Stripe, Notion
@@ -25,10 +27,10 @@
   --color-border-hover: #D4D4D8;
 
   /* --- Dark Mode Tokens --- */
-  --color-dark-surface: #050505;
-  --color-dark-card: #0D0D0D;
-  --color-dark-border: #1C1C1C;
-  --color-dark-elevated: #111111;
+  --color-dark-surface: #0B0B0C;
+  --color-dark-card: #121214;
+  --color-dark-border: #1F1F24;
+  --color-dark-elevated: #16161A;
 
   /* --- Typography --- */
   --font-playfair: var(--font-playfair), "Playfair Display", Georgia, serif;
@@ -98,6 +100,8 @@ html:not(.dark) .bg-cream {
 }
 
 /* ─── Dark Mode ─── */
+html.dark,
+html.dark body,
 .dark body,
 [data-theme="dark"] body {
   background-color: var(--color-dark-surface);
@@ -130,11 +134,11 @@ html:not(.dark) .bg-cream {
 }
 
 .dark ::-webkit-scrollbar-thumb {
-  background: rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.14);
 }
 
 .dark ::-webkit-scrollbar-thumb:hover {
-  background: rgba(255, 255, 255, 0.24);
+  background: rgba(255, 255, 255, 0.28);
 }
 
 /* ═══════════════════════════════════════════════════════════════
@@ -160,10 +164,10 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .dark .glass {
-  background: rgba(5, 5, 5, 0.72);
+  background: rgba(11, 11, 12, 0.8);
   backdrop-filter: blur(20px) saturate(180%);
   -webkit-backdrop-filter: blur(20px) saturate(180%);
-  border: 1px solid rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .glass-card {
@@ -175,8 +179,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .dark .glass-card {
-  background: rgba(13, 13, 13, 0.95);
-  border: 1px solid #1C1C1C;
+  background: rgba(18, 18, 20, 0.95);
+  border: 1px solid #1F1F24;
   box-shadow: var(--shadow-card);
 }
 

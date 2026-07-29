@@ -47,7 +47,7 @@ export function Blog({ locale }: BlogProps) {
   };
 
   return (
-    <section id="blog" className="relative py-28 lg:py-36 bg-white dark:bg-[#0A0A0A]">
+    <section id="blog" className="relative py-28 lg:py-36 bg-white dark:bg-[#0B0B0C]">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <SectionHeader
           title={getLocalizedText(data.sectionTitle, locale)}

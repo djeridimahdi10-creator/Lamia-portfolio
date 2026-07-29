@@ -90,8 +90,8 @@ export function Navbar({ locale }: NavbarProps) {
         <div
           className={`max-w-7xl mx-auto flex items-center justify-between px-4 sm:px-6 py-2.5 sm:py-3 rounded-2xl transition-all duration-300 pointer-events-auto ${
             scrolled
-              ? "bg-white/80 dark:bg-[#0A0A0A]/80 backdrop-blur-xl border border-[#E4E4E7]/60 dark:border-[#1C1C1C]/60 shadow-lg shadow-black/[0.03]"
-              : "bg-white/40 dark:bg-[#0A0A0A]/40 backdrop-blur-sm border border-transparent"
+              ? "bg-white/80 dark:bg-[#0B0B0C]/85 backdrop-blur-xl border border-[#E4E4E7]/60 dark:border-[#1F1F24]/80 shadow-lg shadow-black/[0.03]"
+              : "bg-white/40 dark:bg-[#0B0B0C]/40 backdrop-blur-sm border border-transparent"
           }`}
         >
           {/* Logo Badge */}
@@ -112,7 +112,7 @@ export function Navbar({ locale }: NavbarProps) {
           </a>
 
           {/* Desktop Navigation Links */}
-          <nav className="hidden lg:flex items-center gap-1 bg-black/[0.03] dark:bg-white/[0.02] p-1 rounded-xl border border-[#E4E4E7]/40 dark:border-[#1C1C1C]/40">
+          <nav className="hidden lg:flex items-center gap-1 bg-black/[0.03] dark:bg-white/[0.03] p-1 rounded-xl border border-[#E4E4E7]/40 dark:border-[#1F1F24]">
             {navLinks.map((item) => {
               const sectionId = item.href.replace("#", "");
               const isActive = activeSection === sectionId;
@@ -134,7 +134,7 @@ export function Navbar({ locale }: NavbarProps) {
                   {isActive && (
                     <motion.div
                       layoutId="activeNavBackground"
-                      className="absolute inset-0 bg-white dark:bg-[#141414] rounded-lg shadow-sm"
+                      className="absolute inset-0 bg-white dark:bg-[#16161A] rounded-lg shadow-sm"
                       transition={{ type: "spring", stiffness: 380, damping: 30 }}
                     />
                   )}

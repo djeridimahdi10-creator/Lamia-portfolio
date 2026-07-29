@@ -22,15 +22,17 @@ export function Hero({ locale }: HeroProps) {
   return (
     <section
       id="hero"
-      className="relative min-h-screen flex items-center overflow-hidden bg-[#FAF9F6] dark:bg-[#0A0A0A]"
+      className="relative min-h-screen flex items-center overflow-hidden bg-[#FAF9F6] dark:bg-[#0B0B0C]"
     >
-      {/* Subtle background grid pattern */}
+      {/* Background ambient lighting & grid pattern */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(#C5A059_0.5px,transparent_0.5px)] [background-size:40px_40px] opacity-[0.07]" />
-        {/* Top-right decorative arc */}
+        <div className="absolute inset-0 bg-[radial-gradient(#C5A059_0.5px,transparent_0.5px)] [background-size:40px_40px] opacity-[0.06] dark:opacity-[0.03]" />
+        {/* Soft dark mode gold radial glow centered behind content */}
+        <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-[#C5A059]/[0.05] rounded-full blur-[140px] pointer-events-none hidden dark:block" />
+        {/* Top-right decorative arc line */}
         {!shouldReduceMotion && (
           <motion.div
-            className="absolute -top-32 -right-32 w-[500px] h-[500px] rounded-full border border-[#C5A059]/10"
+            className="absolute -top-32 -right-32 w-[550px] h-[550px] rounded-full border border-[#C5A059]/15 dark:border-[#C5A059]/20"
             animate={{ rotate: 360 }}
             transition={{ duration: 120, repeat: Infinity, ease: "linear" }}
           />
@@ -48,7 +50,7 @@ export function Hero({ locale }: HeroProps) {
               initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#C5A059]/8 border border-[#C5A059]/20 mb-8"
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#C5A059]/8 dark:bg-[#C5A059]/12 border border-[#C5A059]/20 dark:border-[#C5A059]/40 mb-8 shadow-xs"
             >
               <span className="relative flex h-2 w-2">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#C5A059] opacity-75" />
@@ -67,7 +69,7 @@ export function Hero({ locale }: HeroProps) {
                   initial={{ opacity: 0, y: 30 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.7, delay: 0.2 + i * 0.12, ease: [0.16, 1, 0.3, 1] }}
-                  className={`block ${i === 0 ? "text-[#C5A059]" : "text-[#0A0A0A] dark:text-[#EDEDEF]"}`}
+                  className={`block ${i === 0 ? "text-[#C5A059]" : "text-[#0A0A0A] dark:text-white"}`}
                 >
                   {word}
                 </motion.span>
@@ -79,7 +81,7 @@ export function Hero({ locale }: HeroProps) {
               initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.55 }}
-              className="mt-6 text-lg sm:text-xl font-playfair font-semibold text-[#0A0A0A]/80 dark:text-[#EDEDEF]/80 tracking-wide"
+              className="mt-6 text-lg sm:text-xl font-playfair font-semibold text-[#0A0A0A]/80 dark:text-[#E2E2E6] tracking-wide"
             >
               {getLocalizedText(data.title, locale)}
             </motion.p>
@@ -89,7 +91,7 @@ export function Hero({ locale }: HeroProps) {
               initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.7 }}
-              className="mt-4 inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#0A0A0A]/5 dark:bg-white/5 text-[#52525B] dark:text-[#A1A1AA] text-[11px] font-semibold tracking-wide"
+              className="mt-4 inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#0A0A0A]/5 dark:bg-white/5 border border-transparent dark:border-white/10 text-[#52525B] dark:text-[#CCCCCC] text-[11px] font-semibold tracking-wide"
             >
               <Award className="w-3.5 h-3.5 text-[#C5A059]" />
               <span>{getLocalizedText(data.subtitle, locale)}</span>
@@ -114,14 +116,14 @@ export function Hero({ locale }: HeroProps) {
             >
               <button
                 onClick={scrollToProjects}
-                className="btn-primary cursor-pointer"
+                className="btn-primary cursor-pointer font-bold shadow-lg shadow-[#C5A059]/20 dark:bg-gradient-to-r dark:from-[#DFBF7B] dark:via-[#C5A059] dark:to-[#A8833D] dark:text-[#0A0A0B] dark:hover:brightness-110"
               >
                 <span>{getLocalizedText(data.cta, locale)}</span>
                 <ArrowRight className="w-4 h-4" />
               </button>
               <a
                 href="#contact"
-                className="btn-secondary cursor-pointer"
+                className="btn-secondary cursor-pointer dark:border-white/15 dark:text-[#EDEDEF] dark:hover:border-[#C5A059] dark:hover:text-[#C5A059] dark:hover:bg-[#C5A059]/10"
               >
                 <span>{locale === "fr" ? "Me contacter" : "Get in touch"}</span>
               </a>
@@ -139,13 +141,13 @@ export function Hero({ locale }: HeroProps) {
               {/* Decorative ring behind image */}
               {!shouldReduceMotion && (
                 <motion.div
-                  className="absolute -inset-4 rounded-full border border-[#C5A059]/15"
+                  className="absolute -inset-4 rounded-full border border-[#C5A059]/15 dark:border-[#C5A059]/25"
                   animate={{ rotate: 360 }}
                   transition={{ duration: 60, repeat: Infinity, ease: "linear" }}
                 />
               )}
               {/* Profile image container */}
-              <div className="relative w-64 h-64 sm:w-80 sm:h-80 lg:w-[22rem] lg:h-[22rem] rounded-full overflow-hidden border-2 border-[#C5A059]/30 dark:border-[#C5A059]/25 shadow-2xl shadow-[#C5A059]/10">
+              <div className="relative w-64 h-64 sm:w-80 sm:h-80 lg:w-[22rem] lg:h-[22rem] rounded-full overflow-hidden border-2 border-[#C5A059]/30 dark:border-[#C5A059]/40 shadow-2xl shadow-[#C5A059]/10">
                 {data.profileImage ? (
                   <Image
                     src={data.profileImage}
@@ -168,12 +170,12 @@ export function Hero({ locale }: HeroProps) {
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 1.2, duration: 0.5 }}
-                  className="absolute -bottom-4 -left-4 sm:bottom-4 sm:-left-8 bg-white dark:bg-[#111111] rounded-xl px-4 py-3 shadow-lg border border-[#E4E4E7] dark:border-[#1C1C1C]"
+                  className="absolute -bottom-4 -left-4 sm:bottom-4 sm:-left-8 bg-white dark:bg-[#0B0B0D]/90 dark:backdrop-blur-md rounded-xl px-4 py-3 shadow-xl border border-[#E4E4E7] dark:border-white/10"
                 >
-                  <p className="text-[10px] uppercase tracking-widest text-[#71717A] font-bold mb-0.5">
+                  <p className="text-[10px] uppercase tracking-widest text-[#71717A] dark:text-[#C5A059] font-bold mb-0.5">
                     {locale === "fr" ? "Spécialité" : "Specialty"}
                   </p>
-                  <p className="text-xs font-semibold text-[#0A0A0A] dark:text-[#EDEDEF]">
+                  <p className="text-xs font-semibold text-[#0A0A0A] dark:text-white">
                     {getLocalizedText(data.specialty, locale)}
                   </p>
                 </motion.div>
