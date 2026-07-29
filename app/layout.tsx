@@ -34,14 +34,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html suppressHydrationWarning>
+    <html className="dark" suppressHydrationWarning>
       <head>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body className={`${playfair.variable} ${inter.variable} font-sans antialiased`}>
+      <body className={`${playfair.variable} ${inter.variable} font-sans antialiased bg-[#0F0F0F] text-[#EDEDEF]`}>
         {children}
       </body>
     </html>

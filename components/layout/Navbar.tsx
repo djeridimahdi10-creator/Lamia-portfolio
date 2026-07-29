@@ -2,9 +2,8 @@
 
 import { useState, useEffect, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { useTheme } from "next-themes";
 import { useRouter, usePathname } from "next/navigation";
-import { Menu, X, Sun, Moon, Globe, Lock } from "lucide-react";
+import { Menu, X, Globe, Lock } from "lucide-react";
 import { siteConfig } from "@/data/site-config";
 
 interface NavbarProps {
@@ -16,7 +15,6 @@ export function Navbar({ locale }: NavbarProps) {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("hero");
-  const { theme, setTheme } = useTheme();
   const router = useRouter();
   const pathname = usePathname();
 
@@ -157,26 +155,13 @@ export function Navbar({ locale }: NavbarProps) {
             {/* Language Switch */}
             <button
               onClick={switchLocale}
-              className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-[10px] font-bold text-[#52525B] dark:text-[#A1A1AA] hover:text-[#0A0A0A] dark:hover:text-[#EDEDEF] bg-black/[0.03] dark:bg-white/[0.03] hover:bg-black/[0.06] dark:hover:bg-white/[0.06] transition-colors duration-300 cursor-pointer border border-[#E4E4E7]/40 dark:border-[#27272A]/40"
+              className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-[10px] font-bold text-[#A1A1AA] hover:text-[#EDEDEF] bg-white/[0.03] hover:bg-white/[0.06] transition-colors duration-300 cursor-pointer border border-[#27272A]/40"
               aria-label="Switch language"
             >
               <Globe className="w-3.5 h-3.5 text-[#C5A059]" />
               <span className="uppercase font-mono text-[10px]">
                 {locale === "fr" ? "EN" : "FR"}
               </span>
-            </button>
-
-            {/* Theme Toggle */}
-            <button
-              onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-              className="p-2 rounded-xl text-[#52525B] dark:text-[#A1A1AA] hover:text-[#0A0A0A] dark:hover:text-[#EDEDEF] bg-black/[0.03] dark:bg-white/[0.03] hover:bg-black/[0.06] dark:hover:bg-white/[0.06] transition-colors duration-300 cursor-pointer border border-[#E4E4E7]/40 dark:border-[#27272A]/40"
-              aria-label="Toggle theme mode"
-            >
-              {mounted && theme === "dark" ? (
-                <Sun className="w-4 h-4 text-[#C5A059]" />
-              ) : (
-                <Moon className="w-4 h-4 text-[#C5A059]" />
-              )}
             </button>
 
             {/* Mobile Menu Trigger */}
