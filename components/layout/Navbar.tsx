@@ -161,6 +161,7 @@ export function Navbar({ locale }: NavbarProps) {
             </a>
 
             {/* Theme Toggle */}
+            {mounted && (
             <button
               onClick={toggleTheme}
               className="relative flex items-center justify-center w-9 h-9 rounded-xl bg-black/[0.03] dark:bg-white/[0.02] border border-[#E4E4E7]/40 dark:border-[#1C1C1C]/40 hover:border-[#C5A059]/50 hover:bg-[#C5A059]/5 transition-all duration-300 cursor-pointer overflow-hidden"
@@ -190,6 +191,7 @@ export function Navbar({ locale }: NavbarProps) {
                 )}
               </AnimatePresence>
             </button>
+            )}
 
             {/* Language Switch */}
             <button
@@ -252,6 +254,7 @@ export function Navbar({ locale }: NavbarProps) {
 
             <div className="flex items-center justify-center gap-3 pt-6 border-t border-[#E4E4E7] dark:border-[#1C1C1C]">
               {/* Mobile Theme Toggle */}
+              {mounted && (
               <button
                 onClick={toggleTheme}
                 className="p-3 rounded-xl text-[#71717A] dark:text-[#A1A1AA] hover:text-[#C5A059] bg-white dark:bg-[#111111] border border-[#E4E4E7] dark:border-[#1C1C1C] transition-all duration-300 cursor-pointer"
@@ -281,6 +284,7 @@ export function Navbar({ locale }: NavbarProps) {
                   )}
                 </AnimatePresence>
               </button>
+              )}
 
               <a
                 href={`/${locale}/admin`}
